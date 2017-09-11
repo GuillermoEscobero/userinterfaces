@@ -1,0 +1,34 @@
+header nav {
+  height: 90px;
+}
+
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav li {
+  float: left;
+  display: block;
+  text-decoration: none;
+  padding: 16px 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+header nav h2 {
+  font-size: 5;
+}
+
+.size-30 {
+  width: 30%;
+}
+
+.size-40 {
+  width: 40%;
+}
+
+.size-60 {
+  width: 60%;
+}
