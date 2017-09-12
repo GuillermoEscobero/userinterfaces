@@ -32,6 +32,28 @@ header nav {
   height: 70px;
 }
 
+footer {
+  height: 70px;
+  background-color: #009688;
+  padding-right: 3%;
+  padding-left: 3%;
+}
+
+footer ul {
+  display: inline-flex;
+  float: left;
+  line-height: 70px;
+}
+
+footer ul li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+footer ul a {
+  color: #FFFFFF;
+}
+
 .logo {
   display: inline-block;
   line-height: 70px;
@@ -46,6 +68,13 @@ header nav {
   width: 95%;
   max-width: 1024px;
   margin: 0 auto;
+}
+
+.divider {
+  border-left:1px solid #FFFFFF;
+  height:40px;
+  align-self: center;
+  margin-left: 10px;
 }
 
 #personal-information-section, #billing-information-section {
