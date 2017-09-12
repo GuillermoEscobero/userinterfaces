@@ -1,24 +1,27 @@
-header nav {
-  height: 90px;
-}
-
-header nav ul {
+ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  padding-left: 0;
 }
 
 header nav li {
-  float: left;
-  display: block;
-  text-decoration: none;
-  padding: 16px 20px;
-  text-align: center;
-  vertical-align: middle;
+  display: inline;
 }
 
-header nav h2 {
-  font-size: 5;
+#personal-information-section, #billing-information-section {
+    display: flex;
+    margin-bottom: 2.5em;
+}
+
+#personal-information-section input {
+  width: 100%;
+}
+
+#personal-information-section ul {
+  padding-right: 10%;
+}
+
+#billing-information-section>ul>ul {
+  display: flex;
 }
 
 .size-30 {
