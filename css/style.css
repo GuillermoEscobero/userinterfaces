@@ -30,6 +30,7 @@ header nav {
   background-color: #009688;
   display: block;
   height: 70px;
+  border-bottom: 2px solid #009636;
 }
 
 footer {
@@ -61,20 +62,20 @@ footer ul a {
 }
 
 header nav img {
-	width: 75px;
-	height: 45px;
-	vertical-align: middle;
+  width: 75px;
+  height: 45px;
+  vertical-align: middle;
 }
 
 .profile-picture {
-	height: 200px;
-	width: 100%;
+  height: 200px;
+  width: 100%;
 }
 
-.profile-picture img{
-	height: 100%;
-	width: 100%;
-	vertical-align: middle;
+.profile-picture img {
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
 }
 
 .sections-parent {
@@ -88,50 +89,51 @@ header nav img {
 }
 
 .divider {
-  border-left:1px solid #FFFFFF;
-  height:40px;
+  border-left: 1px solid #FFFFFF;
+  height: 40px;
   align-self: center;
   margin-left: 10px;
 }
 
 #personal-information-section, #billing-information-section {
-    display: flex;
-    width: 100%;
-	margin-top: 2em;
-	margin-bottom: 2em;
+  display: flex;
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 #personal-information-section h2, #billing-information-section h2 {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 #personal-information-section input, #billing-information-section input, #personal-information-section select, #billing-information-section select {
-  	width: 100%;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	border: none;
-	border-bottom: 2px solid #009688;
-	background-color: transparent;
-	font-size: 16px;
-	outline: none;
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: none;
+  border-bottom: 2px solid #009688;
+  background-color: transparent;
+  font-size: 16px;
+  outline: none;
 }
 
 #personal-information-section ul, #billing-information-section ul {
   padding-left: 2em;
 }
 
-#billing-information-section ul > li > ul {
+#billing-information-section ul>li>ul {
   display: flex;
-	padding: 0;
+  padding: 0;
 }
 
-#billing-information-section ul > li > ul > li {
+#billing-information-section ul>li>ul>li {
   margin-right: 5%;
 }
 
 .size-15 {
-	width: 15%;
+  width: 15%;
 }
+
 .size-30 {
   width: 30%;
 }
@@ -145,5 +147,5 @@ header nav img {
 }
 
 .size-70 {
-	width: 70%;
+  width: 70%;
 }
