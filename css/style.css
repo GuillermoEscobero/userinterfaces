@@ -1,3 +1,7 @@
+body {
+  margin: 0 auto;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0;
@@ -5,10 +9,15 @@ ul {
 
 header nav li {
   display: inline;
+  clear: right;
 }
 
 header nav {
-  background-color: black;
+  background-color: transparent;
+}
+
+.logo {
+  vertical-align: middle;
 }
 
 .sections-parent {
