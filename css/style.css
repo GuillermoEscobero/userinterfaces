@@ -7,6 +7,10 @@ header nav li {
   display: inline;
 }
 
+header nav {
+  background-color: black;
+}
+
 .sections-parent {
   margin: 20px 30px 0;
 }
