@@ -1,5 +1,6 @@
 body {
   margin: 0 auto;
+  background-color: #EEEEEE;
 }
 
 ul {
@@ -10,16 +11,22 @@ ul {
 
 header nav li {
   display: inline-block;
+  margin-left: 10px
 }
 
 header nav ul {
   display: inline-block;
-  vertical-align: middle;
   float: right;
+  line-height: 70px;
+  margin-right: 3%;
+}
+
+header nav a{
+  color: #FFFFFF
 }
 
 header nav {
-  background-color: transparent;
+  background-color: #009688;
   display: block;
   height: 70px;
 }
@@ -27,6 +34,7 @@ header nav {
 .logo {
   display: inline-block;
   line-height: 70px;
+  margin-left: 3%;
 }
 
 .sections-parent {
