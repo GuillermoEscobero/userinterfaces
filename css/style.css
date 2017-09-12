@@ -32,6 +32,28 @@ header nav {
   height: 70px;
 }
 
+footer {
+  height: 70px;
+  background-color: #009688;
+  padding-right: 3%;
+  padding-left: 3%;
+}
+
+footer ul {
+  display: inline-flex;
+  float: left;
+  line-height: 70px;
+}
+
+footer ul li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+footer ul a {
+  color: #FFFFFF;
+}
+
 .logo {
   display: inline-block;
   line-height: 70px;
@@ -65,6 +87,13 @@ header nav img {
   margin: 0 auto;
 }
 
+.divider {
+  border-left:1px solid #FFFFFF;
+  height:40px;
+  align-self: center;
+  margin-left: 10px;
+}
+
 #personal-information-section, #billing-information-section {
     display: flex;
     width: 100%;
@@ -84,6 +113,7 @@ header nav img {
 	border-bottom: 2px solid #009688;
 	background-color: transparent;
 	font-size: 16px;
+	outline: none;
 }
 
 #personal-information-section ul, #billing-information-section ul {
@@ -117,4 +147,3 @@ header nav img {
 .size-70 {
 	width: 70%;
 }
-
