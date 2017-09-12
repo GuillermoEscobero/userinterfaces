@@ -5,25 +5,28 @@ body {
 ul {
   list-style-type: none;
   padding-left: 0;
+  margin: 0;
 }
 
 header nav li {
-  display: inline;
-  clear: right;
+  display: inline-block;
 }
 
 header nav ul {
   display: inline-block;
+  vertical-align: middle;
+  float: right;
 }
 
 header nav {
   background-color: transparent;
   display: block;
+  height: 70px;
 }
 
 .logo {
-  vertical-align: middle;
   display: inline-block;
+  line-height: 70px;
 }
 
 .sections-parent {
