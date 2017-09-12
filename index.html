@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>My Account - Lococo</title>
 </head>
 
@@ -24,16 +25,18 @@
 
   <div class="sections-parent">
     <div class="sections-account">
+      <h1>My Account details</h1>
       <hr>
       <section id="personal-information-section">
         <header class="size-40">
-          <h2>PERSONAL INFORMATION</h2>
+          <h2>Personal Information</h2>
         </header>
         <div class="size-30">
           <ul>
             <li>First & Last Name<br><input type="text" name="fullname" value="John Doe" disabled></li>
             <li>Birthdate<br><input type="date" name="bday" value="1/1/1970" disabled></li>
             <li>Email<br><input type="email" name="email" value="johndoe@uc3m.es" disabled></li>
+            <li>Password<br><input type="password" name="passw" value="1234admin" disabled></li>
             <li>Path to photo<br><input type="text" name="photo-path" value="Downloads/photo.jpg" disabled></li>
           </ul>
         </div>
@@ -56,12 +59,12 @@
       <hr>
       <section id="billing-information-section">
         <header class="size-40">
-          <h2>BILLING INFORMATION</h2>
+          <h2>Billing Information  <i class="fa fa-credit-card" aria-hidden="true"></i></h2>
         </header>
         <div class="size-60">
           <ul>
             <li>Address<br><input type="text" name="address" disabled value="Av. de la Universidad, 30. Leganés"></li>
-            <li>Payment method<br><select>
+            <li>Payment method <i id="payment-icon" class="fa fa-cc-visa" aria-hidden="true"></i><br><select id="payment-method">
   			<option value="visa">VISA</option>
   			<option value="mastercard">Mastercard</option>
   			<option value="paypal">PayPal</option>
@@ -80,11 +83,11 @@
   </div>
   <footer>
     <ul>
-      <li><a href="#">Link1</a></li>
+      <li><a href="#">Lococo 2017 ©</a></li>
       <div class="divider"></div>
-      <li><a href="#">Link2</a></li>
+      <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
       <div class="divider"></div>
-      <li><a href="#">Link3</a></li>
+      <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
     </ul>
   </footer>
 </body>
