@@ -14,9 +14,9 @@
     <nav>
       <a href="#" class="logo"><img src="img/logo.svg" title="Lococo"></a>
       <ul>
-        <li><a href="#">Link1</a></li>
-        <li><a href="#">Link2</a></li>
-        <li><a href="#">Link3</a></li>
+        <li><a href="#">Explore</a></li>
+        <li><a href="#">My Account</a></li>
+        <li><a href="#">Logout</a></li>
       </ul>
     </nav>
   </header>
@@ -31,10 +31,10 @@
         </header>
         <div class="size-30">
           <ul>
-            <li>First & Last Name<br><input type="text" name="fullname" value="John Doe"></li>
-            <li>Birthdate<br><input type="date" name="bday" value="1/1/1970"></li>
-            <li>Email<br><input type="email" name="email" value="johndoe@uc3m.es"></li>
-            <li>Path to photo<br><input type="text" name="photo-path" value="Downloads/photo.jpg"></li>
+            <li>First & Last Name<br><input type="text" name="fullname" value="John Doe" disabled></li>
+            <li>Birthdate<br><input type="date" name="bday" value="1/1/1970" disabled></li>
+            <li>Email<br><input type="email" name="email" value="johndoe@uc3m.es" disabled></li>
+            <li>Path to photo<br><input type="text" name="photo-path" value="Downloads/photo.jpg" disabled></li>
           </ul>
         </div>
         <div class="size-30">
@@ -60,7 +60,7 @@
         </header>
         <div class="size-60">
           <ul>
-            <li>Address<br><input type="text"></li>
+            <li>Address<br><input type="text" name="address" disabled value="Av. de la Universidad, 30. Leganés"></li>
             <li>Payment method<br><select>
   			<option value="visa">VISA</option>
   			<option value="mastercard">Mastercard</option>
@@ -68,9 +68,9 @@
 			</select></li>
             <li>
               <ul>
-                <li class="size-70">Number<br><input type="text" name="card-number" maxlength="16"></li>
-                <li class="size-15">Valid Thru<br><input type="month" name="card-number" maxlength="4"></li>
-                <li class="size-15">Code<br><input type="password" name="csv" maxlength="3"></li>
+                <li class="size-70">Number<br><input type="text" name="card-number" maxlength="16" value="1234567890123456"></li>
+                <li class="size-15">Valid Thru<br><input type="month" name="card-number" maxlength="5" value="05/19"></li>
+                <li class="size-15">Code<br><input type="password" name="csv" maxlength="3" value="123"></li>
               </ul>
             </li>
           </ul>
