@@ -12,12 +12,18 @@ header nav li {
   clear: right;
 }
 
+header nav ul {
+  display: inline-block;
+}
+
 header nav {
   background-color: transparent;
+  display: block;
 }
 
 .logo {
   vertical-align: middle;
+  display: inline-block;
 }
 
 .sections-parent {
