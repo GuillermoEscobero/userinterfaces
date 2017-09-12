@@ -7,21 +7,35 @@ header nav li {
   display: inline;
 }
 
-#personal-information-section, #billing-information-section {
-    display: flex;
-    margin-bottom: 2.5em;
+.sections-parent {
+  margin: 20px 30px 0;
 }
 
-#personal-information-section input {
+.sections-account {
+  width: 95%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+#personal-information-section, #billing-information-section {
+    display: flex;
+    width: 100%;
+}
+
+#personal-information-section input, #billing-information-section input {
   width: 100%;
 }
 
-#personal-information-section ul {
-  padding-right: 10%;
+#personal-information-section ul, #billing-information-section ul {
+  padding-right: 2em;
 }
 
-#billing-information-section>ul>ul {
+#billing-information-section ul > li > ul {
   display: flex;
+}
+
+#billing-information-section ul > li > ul >li {
+  margin-right: 5%;
 }
 
 .size-30 {
