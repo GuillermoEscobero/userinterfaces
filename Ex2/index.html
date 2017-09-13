@@ -25,59 +25,43 @@
 
 
   <div class="sections-parent">
-    <div class="sections-account">
-      <h1>My Account details</h1>
-      <hr>
-      <section id="personal-information-section">
-        <header class="size-40">
-          <h2>Personal Information</h2>
+    <div class="sections-main">
+      <section id="video-player-main">
+        <header id="video-player-info" class="size-30">
+          <h2>KAYDY CAIN - HDP</h2>
+          <ul>
+            <li><i class="fa fa-heart-o" aria-hidden="true"></i> 300 Likes</li>
+            <li><i class="fa fa-share" aria-hidden="true"></i> 450 times shared</li>
+            <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+              deserunt mollit anim id est laborum.</p></li>
+          </ul>
         </header>
-        <div class="size-30">
-          <ul>
-            <li>First &#38; Last Name<br><input type="text" name="fullname" value="John Doe" disabled></li>
-            <li>Birthdate<br><input type="date" name="bday" value="1/1/1970" disabled></li>
-            <li>Email<br><input type="email" name="email" value="johndoe@uc3m.es" disabled></li>
-            <li>Password<br><input type="password" name="passw" value="1234admin" disabled></li>
-            <li>Path to photo<br><input type="text" name="photo-path" value="Downloads/photo.jpg" disabled></li>
-          </ul>
-        </div>
-        <div class="size-30">
-          <ul>
-            <li>Language<br>
-              <select>
-  			<option value="spa">Spanish</option>
-  			<option value="eng">English</option>
-  			<option value="fra">French</option>
-  			<option value="ger">German</option>
-			</select> </li>
-            <li>Picture<br>
-              <div class="profile-picture">
-                <img src="images/logo.svg" /></div>
-            </li>
-          </ul>
+        <div class="size-70">
+          <div class="video-player">
+            <iframe src="https://www.youtube.com/embed/ecCA4MDHpJE" frameborder="0" allowfullscreen></iframe>
+          </div>
         </div>
       </section>
-      <hr>
-      <section id="billing-information-section">
-        <header class="size-40">
-          <h2>Billing Information  <i class="fa fa-credit-card" aria-hidden="true"></i></h2>
+      <section id="video-suggestions">
+        <header>
+          <h2>We recommend</h2>
         </header>
-        <div class="size-60">
-          <ul>
-            <li>Address<br><input type="text" name="address" disabled value="Av. de la Universidad, 30. Leganés"></li>
-            <li>Payment method <i id="payment-icon" class="fa fa-cc-visa" aria-hidden="true"></i><br><select id="payment-method">
-  			<option value="visa">VISA</option>
-  			<option value="mastercard">Mastercard</option>
-  			<option value="paypal">PayPal</option>
-			</select></li>
-            <li>
-              <ul>
-                <li class="size-70">Number<br><input type="text" name="card-number" maxlength="16" value="1234567890123456"></li>
-                <li class="size-15">Valid Thru<br><input type="month" name="card-number" maxlength="5" value="05/19"></li>
-                <li class="size-15">Code<br><input type="password" name="csv" maxlength="3" value="123"></li>
-              </ul>
-            </li>
-          </ul>
+        <div class="suggestions">
+          <div class="size-33">
+            <div class="video-player video-suggested">
+              <iframe src="https://www.youtube.com/embed/ZRW5SqwwIz8" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="size-33">
+            <div class="video-player video-suggested">
+              <iframe src="https://www.youtube.com/embed/-dXqSl7W8Ig" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="size-33">
+            <div class="video-player video-suggested">
+              <iframe src="https://www.youtube.com/embed/ur8yFIXYZjY" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
         </div>
       </section>
     </div>
