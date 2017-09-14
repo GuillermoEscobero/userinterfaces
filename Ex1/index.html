@@ -3,17 +3,17 @@
 
 <head>
   <meta charset="utf-8">
+  <title>My Account - Lococo</title>
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>My Account - Lococo</title>
 </head>
 
 <body>
 
   <header>
     <nav>
-      <a href="#" class="logo"><img src="images/logo.svg" title="Lococo"></a>
+      <a href="#" class="logo"><img src="images/logo.svg" alt="Lococo"></a>
       <ul>
         <li><a href="#">Explore</a></li>
         <li><a href="#">My Account</a></li>
@@ -21,7 +21,6 @@
       </ul>
     </nav>
   </header>
-
 
   <div class="sections-parent">
     <div class="sections-account">
@@ -44,14 +43,15 @@
           <ul>
             <li>Language<br>
               <select>
-  			<option value="spa">Spanish</option>
-  			<option value="eng">English</option>
-  			<option value="fra">French</option>
-  			<option value="ger">German</option>
-			</select> </li>
+          			<option value="spa">Spanish</option>
+          			<option value="eng">English</option>
+          			<option value="fra">French</option>
+          			<option value="ger">German</option>
+        			</select>
+            </li>
             <li>Picture<br>
               <div class="profile-picture">
-                <img src="images/logo.svg" /></div>
+                <img src="images/idphoto.svg" /></div>
             </li>
           </ul>
         </div>
@@ -64,7 +64,7 @@
         <div class="size-60">
           <ul>
             <li>Address<br><input type="text" name="address" disabled value="Av. de la Universidad, 30. Leganés"></li>
-            <li>Payment method <i id="payment-icon" class="fa fa-cc-visa" aria-hidden="true"></i><br><select id="payment-method">
+            <li>Payment method <i class="fa fa-cc-visa" aria-hidden="true"></i><br><select id="payment-method">
   			<option value="visa">VISA</option>
   			<option value="mastercard">Mastercard</option>
   			<option value="paypal">PayPal</option>
