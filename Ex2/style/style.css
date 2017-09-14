@@ -138,7 +138,7 @@ header nav img {
   height: 0;
 }
 
-.video-player iframe{
+.video-player iframe {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -156,10 +156,45 @@ header nav img {
 
 .suggestions {
   display: flex;
+  padding: 30px;
 }
 
-.video-suggested {
-  margin: 0 0.5em;
+.video-suggested-card {
+  background-color: rgb(204, 204, 204);
+  margin: .5em .5em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.video-suggested-img-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+  background-color: inherit;
+  margin: .7em;
+}
+
+.video-suggested-card img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.video-suggested-card h2 {
+  font-size: 16px;
+  font-weight: 100;
+  padding: 1em .5em;
+  margin: 0;
+  background-color: rgb(215, 215, 215);
+}
+
+.video-suggested-card i {
+  font-size: 2em;
+  line-height: 16px;
+  vertical-align: middle;
+  float: right;
 }
 
 .size-15 {
