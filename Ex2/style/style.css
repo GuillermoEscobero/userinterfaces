@@ -193,8 +193,15 @@ header nav img {
 .video-suggested-card i {
   font-size: 2em;
   line-height: 16px;
+  font-weight: 50;
   vertical-align: middle;
   float: right;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
 }
 
 .size-15 {
