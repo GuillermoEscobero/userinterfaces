@@ -28,7 +28,7 @@ header nav a {
 }
 
 header nav li:hover {
-  background-color: rgb(45, 159, 73);
+  background-color: #424242;
 }
 
 header nav {
@@ -41,7 +41,7 @@ header nav {
 
 footer {
   height: 70px;
-  background-color: #009688;
+  background-color: rgb(0, 0, 0);
   padding-right: 3%;
   padding-left: 3%;
 }
@@ -54,11 +54,11 @@ footer ul {
 
 footer li {
   display: inline-block;
-  margin-left: 10px;
+  padding: 0 10px;
 }
 
 footer li:hover {
-  background-color: rgb(45, 159, 73);
+  background-color: #424242;
 }
 
 footer a {
@@ -113,7 +113,6 @@ header nav img {
   border-left: 1px solid #FFFFFF;
   height: 40px;
   align-self: center;
-  margin-left: 10px;
 }
 
 #personal-information-section, #billing-information-section {
@@ -132,7 +131,7 @@ header nav img {
   margin-bottom: 1em;
   margin-top: 1em;
   border: none;
-  border-bottom: 2px solid #009688;
+  border-bottom: 2px solid #424242;
   background-color: transparent;
   font-size: 16px;
   outline: none;
