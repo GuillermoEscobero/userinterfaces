@@ -195,7 +195,11 @@ header nav img {
   height: 2em;
 }
 
-.background-white {
+#user-name{
+  padding-right: 20px;
+}
+
+.photo-id-nav {
   background-color: #FFF;
 }
 
