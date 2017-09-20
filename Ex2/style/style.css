@@ -42,7 +42,7 @@ header nav ul {
 header nav a {
   color: #FFFFFF;
   text-decoration: none;
-  display: block;
+  display: inline-block;
 }
 
 header nav li:hover, footer ul li:hover {
@@ -55,9 +55,7 @@ header nav {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 2
-
-
+  z-index: 1;
 }
 
 footer {
