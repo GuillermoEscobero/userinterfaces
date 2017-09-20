@@ -21,6 +21,13 @@ header nav ul {
   margin-right: 3%;
 }
 
+header {
+  display: block;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
 header nav a {
   color: #FFFFFF;
   text-decoration: none;
@@ -92,6 +99,7 @@ header nav img {
 
 .sections-parent {
   margin: 20px 30px 0;
+  margin-top: 70px;
 }
 
 .sections-account {
