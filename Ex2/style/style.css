@@ -146,7 +146,7 @@ header nav img {
 
 .suggestions {
   display: flex;
-  padding: 30px;
+  padding: 30px 0 30px 0;
 }
 
 .video-suggested-card {
@@ -162,7 +162,6 @@ header nav img {
   padding-top: 25px;
   height: 0;
   background-color: inherit;
-  margin: .7em;
 }
 
 .video-suggested-card img {
