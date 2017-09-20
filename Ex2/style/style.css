@@ -57,6 +57,7 @@ header nav {
   top: 0;
   z-index: 2
 
+
 }
 
 footer {
@@ -162,9 +163,10 @@ header nav img {
 }
 
 .video-suggested-card {
-  background-color: rgb(204, 204, 204);
+  background-color: #FFFFFF;
   margin: .5em .5em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 2px;
 }
 
 .video-suggested-img-wrapper {
@@ -189,7 +191,7 @@ header nav img {
   font-weight: 100;
   padding: 1em .5em;
   margin: 0;
-  background-color: rgb(215, 215, 215);
+  background-color: #FFFFFF;
 }
 
 .video-suggested-card i {
