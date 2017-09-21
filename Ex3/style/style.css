@@ -6,16 +6,15 @@ body {
 
 header nav {
   flex-direction: column;
-  align-items: stretch; /*nada seguro de esto*/
-  justify-content: space-between;
-  height: 180px; /* cambiar a porcentaje o em */
+  align-items: stretch;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  height: 180px; /* TODO cambiar a porcentaje o em */
 
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
   width: 100%;
   top: 0;
-
-  padding: 34px;
 }
 
 header nav ul {
@@ -23,20 +22,30 @@ header nav ul {
   margin: 0;
 }
 
-header nav ul a, header nav ul h2 {
-  color: white;
+header nav ul li {
+  align-self: center;
+  height: auto; /*TODO Deberia ser un link ocupando todo el espacio entre
+  hermanos, pero solo se rodea del texto */
+}
 
+header nav a, header nav h2 {
+  color: white;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
 }
 
 #header-info {
   flex-direction: row;
   justify-content: space-between;
+  height: inherit;
 }
 
-#header-links{
+#header-links {
   flex-direction: column;
-  justify-content: center; /*check*/
-  list-style-type:none;
+  justify-content: space-evenly;
+  list-style-type: none;
+  height: inherit;
 }
 
 .container {
@@ -47,4 +56,19 @@ header nav ul a, header nav ul h2 {
 .image {
   max-width: 70px;
   max-height: 70px;
+}
+
+@media only screen and (min-width: 600px) {
+  #header-links {
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: inherit;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  header nav {
+    flex-direction: row;
+  }
+  /*TODO no se distribuyen equitativamente los hijos del contenedor header nav*/
 }
