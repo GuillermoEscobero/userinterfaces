@@ -4,172 +4,47 @@ body {
   background: #EEEEEE;
 }
 
-@media screen and (max-width: 480px) {
-    
-}
-
-header nav ul, .sections-account ul, footer ul {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0 auto;
-}
-
-header nav li {
-  display: inline-block;
-  padding: 0 10px;
-}
-
-header nav ul {
-  float: right;
-  line-height: 70px;
-  margin-right: 3%;
-}
-
-header nav a {
-  color: #FFFFFF;
-  text-decoration: none;
-  display: block;
-}
-
-header nav li:hover {
-  background-color: #424242;
-}
-
 header nav {
+  flex-direction: column;
+  align-items: stretch; /*nada seguro de esto*/
+  justify-content: space-between;
+  height: 180px; /* cambiar a porcentaje o em */
+
   background-color: rgba(0, 0, 0, 0.9);
-  height: 70px;
   position: fixed;
   width: 100%;
   top: 0;
+
+  padding: 34px;
 }
 
-footer {
-  height: 70px;
-  background-color: rgb(0, 0, 0);
-  padding-right: 3%;
-  padding-left: 3%;
-}
-
-footer ul {
-  display: inline-flex;
-  float: left;
-  line-height: 70px;
-}
-
-footer li {
-  display: inline-block;
-  padding: 0 10px;
-}
-
-footer li:hover {
-  background-color: #424242;
-}
-
-footer a {
-  color: #FFFFFF;
-  text-decoration: none;
-  display: block;
-}
-
-header nav a.logo {
-  display: inline-block;
-  line-height: 70px;
-  margin-left: 3%;
-}
-
-header nav img {
-  width: 75px;
-  height: 45px;
-  vertical-align: middle;
-}
-
-.profile-picture {
-  height: 200px;
-  width: 100%;
-  padding-top: 1em;
-}
-
-.profile-picture img {
-  height: 100%;
-  width: 100%;
-  vertical-align: middle;
-}
-
-.main {
-  margin: 6em 0 2em 0;
-}
-
-.sections-account {
-  width: 95%;
-  max-width: 80%;
-  margin: 0 auto;
-  background-color: #FFFFFF;
-  border-radius: 2px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  padding: 20px 30px 10px;
-}
-
-.sections-account header h2 {
-  font-weight: 100;
-}
-
-.divider {
-  border-left: 1px solid #FFFFFF;
-  height: 40px;
-  align-self: center;
-}
-
-#personal-information-section, #billing-information-section {
-  display: flex;
-  width: 100%;
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
-
-#personal-information-section h2, #billing-information-section h2 {
-  margin: 0 auto;
-}
-
-#personal-information-section input, #billing-information-section input, #personal-information-section select, #billing-information-section select {
-  width: 100%;
-  margin-bottom: 1em;
-  margin-top: 1em;
-  border: none;
-  border-bottom: 2px solid #424242;
-  background-color: transparent;
-  font-size: 16px;
-  outline: none;
-}
-
-#personal-information-section ul, #billing-information-section ul {
-  padding-left: 2em;
-}
-
-#billing-information-section ul>li>ul {
-  display: flex;
+header nav ul {
   padding: 0;
+  margin: 0;
 }
 
-#billing-information-section ul>li>ul>li {
-  margin-right: 5%;
+header nav ul a, header nav ul h2 {
+  color: white;
+
 }
 
-.size-15 {
-  width: 15%;
+#header-info {
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.size-30 {
-  width: 30%;
+#header-links{
+  flex-direction: column;
+  justify-content: center; /*check*/
+  list-style-type:none;
 }
 
-.size-40 {
-  width: 40%;
+.container {
+  display: flex;
+  /*flex-direction: row; for horizontal, column for vertical*/
 }
 
-.size-60 {
-  width: 60%;
-}
-
-.size-70 {
-  width: 70%;
+.image {
+  max-width: 70px;
+  max-height: 70px;
 }
