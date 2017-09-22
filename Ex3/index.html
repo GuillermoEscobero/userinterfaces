@@ -26,6 +26,66 @@
     </nav>
   </header>
 
+  <div class="main">
+    <div class="sections-account">
+      <h1>My Account details</h1>
+      <hr>
+      <section id="personal-information-section" class="card">
+        <header class="size-40">
+          <h2>Personal Information</h2>
+        </header>
+        <div>
+          <ul class="list">
+            <li>First &#38; Last Name<br><input type="text" name="fullname" value="John Doe" disabled></li>
+            <li>Birthdate<br><input type="date" name="bday" value="1/1/1970" disabled></li>
+            <li>Email<br><input type="email" name="email" value="johndoe@uc3m.es" disabled></li>
+            <li>Password<br><input type="password" name="passw" value="1234admin" disabled></li>
+            <li>Path to photo<br><input type="text" name="photo-path" value="Downloads/photo.jpg" disabled></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="list">
+            <li>Language<br>
+              <select>
+          			<option value="spa">Spanish</option>
+          			<option value="eng">English</option>
+          			<option value="fra">French</option>
+          			<option value="ger">German</option>
+        			</select>
+            </li>
+            <li>Picture<br>
+              <div class="profile-picture">
+                <img src="images/idphoto.png" /></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <hr>
+      <section id="billing-information-section" class="card">
+        <header>
+          <h2>Billing Information  <i class="fa fa-credit-card" aria-hidden="true"></i></h2>
+        </header>
+        <div>
+          <ul class="list">
+            <li>Address<br><input type="text" name="address" disabled value="Av. de la Universidad, 30. Leganés"></li>
+            <li>Payment method <i class="fa fa-cc-visa" aria-hidden="true"></i><br><select id="payment-method">
+  			<option value="visa">VISA</option>
+  			<option value="mastercard">Mastercard</option>
+  			<option value="paypal">PayPal</option>
+			</select></li>
+            <li>
+              <ul class="list">
+                <li class=>Number<br><input type="text" name="card-number" maxlength="16" value="1234567890123456"></li>
+                <li class=>Valid Thru<br><input type="month" name="card-number" maxlength="5" value="05/19"></li>
+                <li class=>Code<br><input type="password" name="csv" maxlength="3" value="123"></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+
 </body>
 
 

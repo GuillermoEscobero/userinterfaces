@@ -1,15 +1,15 @@
 body {
   margin: 0 auto;
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
-  background: #EEEEEE;
+  background: #FFFFFF;
 }
 
 header nav {
   flex-direction: column;
-  align-items: stretch;
+  /*align-items: stretch;
   justify-content: space-evenly;
-  flex-grow: 1;
-  height: 180px; /* TODO cambiar a porcentaje o em */
+  flex-grow: 1;   Esto no hace na*/
+  height: 12em;
 
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
@@ -39,23 +39,59 @@ header nav a, header nav h2 {
   flex-direction: row;
   justify-content: space-between;
   height: inherit;
+  align-items: stretch;
 }
 
 #header-links {
+  /*Quiero que herede de .list*/
   flex-direction: column;
   justify-content: space-evenly;
   list-style-type: none;
   height: inherit;
 }
 
+#personal-information-section{
+  align-self: stretch;
+  /* quiero que herede de .container*/
+  /*TODO ordenar los campos de entrada*/
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+}
+
+.main {
+  /*Crear una clase card*/
+  margin: 12em 0em 2em 0em;
+}
+
 .container {
   display: flex;
-  /*flex-direction: row; for horizontal, column for vertical*/
 }
 
 .image {
-  max-width: 70px;
-  max-height: 70px;
+  max-width: 3em;
+  max-height: 3em;
+}
+
+.card {
+  background-color: #EEEEEE;
+  max-width: 90%; /*TODO hacer que se centre en todo el espacio*/
+  border-radius: 2px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+}
+
+.sections-account {
+  padding: 1em 1em 1em 1em;
+  /* Quiero que herede de .container*/
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /*TOFIX el hr aparece como un punto*/
+}
+
+.list {
+  list-style-type: none;
 }
 
 @media only screen and (min-width: 600px) {
@@ -64,11 +100,19 @@ header nav a, header nav h2 {
     justify-content: space-evenly;
     width: inherit;
   }
+
+  #personal-information-section {
+    flex-direction: row;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   header nav {
     flex-direction: row;
   }
-  /*TODO no se distribuyen equitativamente los hijos del contenedor header nav*/
+  /*TODO no se distribuyen equitativamente los hijos del contenedor header nav
+  (header nav ul y header nav div)*/
+
+
+
 }
