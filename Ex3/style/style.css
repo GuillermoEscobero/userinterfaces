@@ -103,6 +103,7 @@ header nav a, header nav h2 {
 
   #personal-information-section {
     flex-direction: row;
+    align-self: stretch;
   }
 }
 
