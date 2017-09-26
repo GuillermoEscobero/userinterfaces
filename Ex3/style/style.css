@@ -80,15 +80,13 @@ header nav img {
 }
 
 .profile-picture {
-  height: 200px;
-  width: 100%;
-  padding-top: 1em;
+  padding-top: 0.5em;
 }
 
 .profile-picture img {
-  height: 100%;
-  width: 100%;
-  vertical-align: middle;
+  width: 60%;
+  margin: auto;
+  display: block;
 }
 
 .main {
@@ -213,7 +211,7 @@ header nav img {
     }
 
     .main {
-      margin-top: 12em;
+      margin-top: 0;
       margin-bottom: 0;
     }
 
@@ -238,6 +236,7 @@ header nav img {
       background-color: rgba(0, 0, 0, 0.9);
       line-height: 40px;
       width: 100%;
+      float: none;
     }
 
     header nav li {
@@ -255,7 +254,8 @@ header nav img {
     }
 
     header nav {
-      position: sticky;
+      position: static;
+      height: 13em;
     }
 
     #billing-information-section ul>li>ul {
