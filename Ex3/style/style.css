@@ -175,6 +175,16 @@ header nav img {
   display: none;
 }
 
+@media only screen and (max-width: 768px) {
+    /* For tablets: */
+    [class*="size-"] {
+        width: 50%;
+    }
+
+    .size-40 {
+      width: 100%;
+    }
+}
 
 @media only screen and (max-width: 600px) {
     /* For mobile phones: */
@@ -222,6 +232,10 @@ header nav img {
 
     a.logo {
       float: none;
+    }
+
+    header nav {
+      position: sticky;
     }
 
     #billing-information-section ul>li>ul {
