@@ -18,8 +18,13 @@ body {
   margin-right: 2em;
 }
 
+#video-player-info ul li {
+  color: #bdbdbd
+}
+
 #video-player-info p{
   font-size: 15px;
+  color: black;
 }
 
 header nav ul, .sections-main ul, footer ul {
@@ -127,6 +132,7 @@ header nav img {
   padding-bottom: 56.25%;
   padding-top: 25px;
   height: 0;
+  margin-top: 4em;
 }
 
 .video-player iframe {
