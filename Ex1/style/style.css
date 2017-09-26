@@ -113,6 +113,7 @@ header nav img {
   border-left: 1px solid #FFFFFF;
   height: 40px;
   align-self: center;
+  padding: 0;
 }
 
 #personal-information-section, #billing-information-section {
