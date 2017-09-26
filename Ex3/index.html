@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>My Account - Lococo</title>
-  <meta name="viewport" content="initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,15 +13,12 @@
 <body>
 
   <header>
-    <nav class="container">
-      <div class="container" id="header-info">
-        <a href="#"><img src="images/logo.svg" alt="Lococo" class="image"></a>
-        <h2> My Account </h2>
-      </div>
-      <ul class="container" id="header-links">
-        <li><a href="#">Link1</a></li>
-        <li><a href="#">Link2</a></li>
-        <li><a href="#">Link3</a></li>
+    <nav>
+      <a href="#" class="logo"><img src="images/logo.svg" alt="Lococo"></a>
+      <ul>
+        <li><a href="../Ex2/index.html">Explore</a></li>
+        <li><a href="#">My Account</a></li>
+        <li><a href="#">Logout</a></li>
       </ul>
     </nav>
   </header>
@@ -30,12 +27,12 @@
     <div class="sections-account">
       <h1>My Account details</h1>
       <hr>
-      <section id="personal-information-section" class="card">
+      <section id="personal-information-section">
         <header class="size-40">
           <h2>Personal Information</h2>
         </header>
-        <div>
-          <ul class="list">
+        <div class="size-30">
+          <ul>
             <li>First &#38; Last Name<br><input type="text" name="fullname" value="John Doe" disabled></li>
             <li>Birthdate<br><input type="date" name="bday" value="1/1/1970" disabled></li>
             <li>Email<br><input type="email" name="email" value="johndoe@uc3m.es" disabled></li>
@@ -43,8 +40,8 @@
             <li>Path to photo<br><input type="text" name="photo-path" value="Downloads/photo.jpg" disabled></li>
           </ul>
         </div>
-        <div>
-          <ul class="list">
+        <div class="size-30">
+          <ul>
             <li>Language<br>
               <select>
           			<option value="spa">Spanish</option>
@@ -61,12 +58,12 @@
         </div>
       </section>
       <hr>
-      <section id="billing-information-section" class="card">
-        <header>
+      <section id="billing-information-section">
+        <header class="size-40">
           <h2>Billing Information  <i class="fa fa-credit-card" aria-hidden="true"></i></h2>
         </header>
-        <div>
-          <ul class="list">
+        <div class="size-60">
+          <ul>
             <li>Address<br><input type="text" name="address" disabled value="Av. de la Universidad, 30. Leganés"></li>
             <li>Payment method <i class="fa fa-cc-visa" aria-hidden="true"></i><br><select id="payment-method">
   			<option value="visa">VISA</option>
@@ -74,10 +71,10 @@
   			<option value="paypal">PayPal</option>
 			</select></li>
             <li>
-              <ul class="list">
-                <li class=>Number<br><input type="text" name="card-number" maxlength="16" value="1234567890123456"></li>
-                <li class=>Valid Thru<br><input type="month" name="card-number" maxlength="5" value="05/19"></li>
-                <li class=>Code<br><input type="password" name="csv" maxlength="3" value="123"></li>
+              <ul>
+                <li class="size-70">Number<br><input type="text" name="card-number" maxlength="16" value="1234567890123456"></li>
+                <li class="size-15">Valid Thru<br><input type="month" name="card-number" maxlength="5" value="05/19"></li>
+                <li class="size-15">Code<br><input type="password" name="csv" maxlength="3" value="123"></li>
               </ul>
             </li>
           </ul>
@@ -85,8 +82,15 @@
       </section>
     </div>
   </div>
-
+  <footer>
+    <ul>
+      <li><a href="#">Lococo 2017 ©</a></li>
+      <div class="divider"></div>
+      <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+      <div class="divider"></div>
+      <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+    </ul>
+  </footer>
 </body>
-
 
 </html>

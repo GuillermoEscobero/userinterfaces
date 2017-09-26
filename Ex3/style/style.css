@@ -1,119 +1,234 @@
 body {
   margin: 0 auto;
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
-  background: #FFFFFF;
+  background: #EEEEEE;
+}
+
+header nav ul, .sections-account ul, footer ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0 auto;
+}
+
+header nav li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+header nav ul {
+  float: right;
+  line-height: 70px;
+  margin-right: 3%;
+}
+
+header nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  display: block;
+}
+
+header nav li:hover {
+  background-color: #424242;
 }
 
 header nav {
-  flex-direction: column;
-  /*align-items: stretch;
-  justify-content: space-evenly;
-  flex-grow: 1;   Esto no hace na*/
-  height: 12em;
-
   background-color: rgba(0, 0, 0, 0.9);
+  height: 70px;
   position: fixed;
   width: 100%;
   top: 0;
 }
 
-header nav ul {
-  padding: 0;
-  margin: 0;
+footer {
+  height: 70px;
+  background-color: rgb(0, 0, 0);
+  padding-right: 3%;
+  padding-left: 3%;
 }
 
-header nav ul li {
-  align-self: center;
-  height: auto; /*TODO Deberia ser un link ocupando todo el espacio entre
-  hermanos, pero solo se rodea del texto */
+footer ul {
+  display: inline-flex;
+  float: left;
+  line-height: 70px;
 }
 
-header nav a, header nav h2 {
-  color: white;
-  padding: 0;
-  margin: 0;
+footer li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+footer li:hover {
+  background-color: #424242;
+}
+
+footer a {
+  color: #FFFFFF;
   text-decoration: none;
+  display: block;
 }
 
-#header-info {
-  flex-direction: row;
-  justify-content: space-between;
-  height: inherit;
-  align-items: stretch;
+header nav a.logo {
+  display: inline-block;
+  line-height: 70px;
+  margin-left: 3%;
 }
 
-#header-links {
-  /*Quiero que herede de .list*/
-  flex-direction: column;
-  justify-content: space-evenly;
-  list-style-type: none;
-  height: inherit;
+header nav img {
+  width: 75px;
+  height: 45px;
+  vertical-align: middle;
 }
 
-#personal-information-section{
-  align-self: stretch;
-  /* quiero que herede de .container*/
-  /*TODO ordenar los campos de entrada*/
-  display: flex;
-  flex-direction: column;
-  align-content: stretch;
+.profile-picture {
+  height: 200px;
+  width: 100%;
+  padding-top: 1em;
+}
+
+.profile-picture img {
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
 }
 
 .main {
-  /*Crear una clase card*/
-  margin: 12em 0em 2em 0em;
-}
-
-.container {
-  display: flex;
-}
-
-.image {
-  max-width: 3em;
-  max-height: 3em;
-}
-
-.card {
-  background-color: #EEEEEE;
-  max-width: 90%; /*TODO hacer que se centre en todo el espacio*/
-  border-radius: 2px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-
+  margin: 6em 0 2em 0;
 }
 
 .sections-account {
-  padding: 1em 1em 1em 1em;
-  /* Quiero que herede de .container*/
+  width: 95%;
+  max-width: 1024px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  padding: 20px 30px 10px;
+}
+
+.sections-account header h2 {
+  font-weight: 100;
+}
+
+.divider {
+  border-left: 1px solid #FFFFFF;
+  height: 40px;
+  align-self: center;
+}
+
+#personal-information-section, #billing-information-section {
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  /*TOFIX el hr aparece como un punto*/
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
-.list {
-  list-style-type: none;
+#personal-information-section h2, #billing-information-section h2 {
+  margin: 0 auto;
 }
 
-@media only screen and (min-width: 600px) {
-  #header-links {
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: inherit;
-  }
-
-  #personal-information-section {
-    flex-direction: row;
-    align-self: stretch;
-  }
+#personal-information-section input, #billing-information-section input, #personal-information-section select, #billing-information-section select {
+  width: 100%;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  border: none;
+  border-bottom: 2px solid #424242;
+  background-color: transparent;
+  font-size: 16px;
+  outline: none;
+  text-overflow: ellipsis;
 }
 
-@media only screen and (min-width: 768px) {
-  header nav {
-    flex-direction: row;
-  }
-  /*TODO no se distribuyen equitativamente los hijos del contenedor header nav
-  (header nav ul y header nav div)*/
+#personal-information-section ul, #billing-information-section ul {
+  padding-left: 2em;
+}
+
+#billing-information-section ul>li>ul {
+  display: flex;
+  padding: 0;
+}
+
+#billing-information-section ul>li>ul>li {
+  margin-right: 5%;
+}
+
+.size-15 {
+  width: 15%;
+}
+
+.size-30 {
+  width: 30%;
+}
+
+.size-40 {
+  width: 40%;
+}
+
+.size-60 {
+  width: 60%;
+}
+
+.size-70 {
+  width: 70%;
+}
+
+#nav-logo {
+  display: none;
+}
 
 
+@media only screen and (max-width: 600px) {
+    /* For mobile phones: */
+    [class*="size-"] {
+        width: 100%;
+    }
 
+    .main {
+      margin-top: 12em;
+      margin-bottom: 0;
+    }
+
+    #personal-information-section, #billing-information-section {
+      display: block;
+    }
+
+    #personal-information-section ul, #billing-information-section ul {
+      padding-left: 1em;
+    }
+
+    .sections-account header {
+      margin-bottom: 1em;
+    }
+
+    .sections-account {
+      width: auto;
+    }
+
+    header nav ul {
+      margin-right: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      line-height: 40px;
+      width: 100%;
+    }
+
+    header nav li {
+      display: block;
+      padding: 0 10px;
+    }
+
+    header nav a {
+      float: right;
+      clear: right;
+    }
+
+    a.logo {
+      float: none;
+    }
+
+    #billing-information-section ul>li>ul {
+      display: block;
+    }
+
+    #nav-logo {
+      display: inline;
+    }
 }
