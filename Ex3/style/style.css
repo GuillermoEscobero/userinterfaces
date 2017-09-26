@@ -213,7 +213,7 @@ header nav img {
     }
 
     .main {
-      margin-top: 12em;
+      margin-top: 0;
       margin-bottom: 0;
     }
 
@@ -238,6 +238,7 @@ header nav img {
       background-color: rgba(0, 0, 0, 0.9);
       line-height: 40px;
       width: 100%;
+      float: none;
     }
 
     header nav li {
@@ -255,7 +256,8 @@ header nav img {
     }
 
     header nav {
-      position: sticky;
+      position: static;
+      height: 13em;
     }
 
     #billing-information-section ul>li>ul {
