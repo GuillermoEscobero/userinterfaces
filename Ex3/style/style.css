@@ -169,10 +169,6 @@ header nav img {
   width: 70%;
 }
 
-#nav-logo {
-  display: none;
-}
-
 @media only screen and (max-width: 768px) {
     /* For tablets: */
     [class*="size-"] {
@@ -263,7 +259,4 @@ header nav img {
       display: block;
     }
 
-    #nav-logo {
-      display: inline;
-    }
 }
