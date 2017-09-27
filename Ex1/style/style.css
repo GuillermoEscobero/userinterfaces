@@ -1,4 +1,4 @@
-/* Main styles and resets */
+/* ------------------------ Main styles and resets ---------------------- */
 
 body {
   margin: 0 auto;
@@ -28,7 +28,7 @@ header nav {
 
 /* Logo */
 
-a.logo {
+nav a.logo {
   display: inline-block;
   line-height: 70px;
   margin-left: 3%;
@@ -66,8 +66,9 @@ header nav a {
 /* -----------    Body main wrapper (margins needed to have a nav fixed
 and margin  to the footer) ------------------------------ */
 
-.main {
+main {
   margin: 6em 0 2em 0;
+  padding: 0 5%;
 }
 
 /* ------------------------ Sections container -------------------------- */
