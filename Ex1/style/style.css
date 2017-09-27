@@ -4,31 +4,14 @@ body {
   background: #EEEEEE;
 }
 
-header nav ul, .sections-account ul, footer ul {
-  list-style-type: none;
-  padding-left: 0;
+h2 {
   margin: 0 auto;
 }
 
-header nav li {
-  display: inline-block;
-  padding: 0 10px;
-}
-
-header nav ul {
-  float: right;
-  line-height: 70px;
-  margin-right: 3%;
-}
-
-header nav a {
-  color: #FFFFFF;
-  text-decoration: none;
-  display: block;
-}
-
-header nav li:hover {
-  background-color: #424242;
+ul.unformatted {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0 auto;
 }
 
 header nav {
@@ -37,6 +20,96 @@ header nav {
   position: fixed;
   width: 100%;
   top: 0;
+}
+
+a.logo {
+  display: inline-block;
+  line-height: 70px;
+  margin-left: 3%;
+}
+
+.logo img {
+  width: 75px;
+  height: 45px;
+  vertical-align: middle;
+}
+
+header nav ul.unformatted {
+  float: right;
+  line-height: 70px;
+  margin-right: 3%;
+}
+
+header nav li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+header nav li:hover {
+  background-color: #424242;
+}
+
+header nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  display: block;
+}
+
+.profile-picture {
+  padding-top: 0.5em;
+}
+
+.profile-picture img {
+  width: 60%;
+  margin: auto;
+  display: block;
+}
+
+.main {
+  margin: 6em 0 2em 0;
+}
+
+.sections-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  padding: 20px 30px 10px;
+}
+
+.sections-container header h2 {
+  font-weight: 100;
+}
+
+.sections-container input, .sections-container select {
+  width: 100%;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  border: none;
+  border-bottom: 2px solid #424242;
+  background-color: transparent;
+  font-size: 16px;
+  outline: none;
+}
+
+.secondary-section {
+  display: flex;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.secondary-section ul {
+  padding-left: 2em;
+}
+
+#billing-information-section ul>li>ul {
+  display: flex;
+  padding: 0;
+}
+
+#billing-information-section ul>li>ul>li {
+  margin-right: 5%;
 }
 
 footer {
@@ -67,86 +140,11 @@ footer a {
   display: block;
 }
 
-header nav a.logo {
-  display: inline-block;
-  line-height: 70px;
-  margin-left: 3%;
-}
-
-header nav img {
-  width: 75px;
-  height: 45px;
-  vertical-align: middle;
-}
-
-.profile-picture {
-  padding-top: 0.5em;
-}
-
-.profile-picture img {
-  width: 60%;
-  margin: auto;
-  display: block;
-}
-
-.main {
-  margin: 6em 0 2em 0;
-}
-
-.sections-account {
-  width: 95%;
-  max-width: 1024px;
-  margin: 0 auto;
-  background-color: #FFFFFF;
-  border-radius: 2px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  padding: 20px 30px 10px;
-}
-
-.sections-account header h2 {
-  font-weight: 100;
-}
-
 .divider {
   border-left: 1px solid #FFFFFF;
   height: 40px;
   align-self: center;
   padding: 0;
-}
-
-#personal-information-section, #billing-information-section {
-  display: flex;
-  width: 100%;
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
-
-#personal-information-section h2, #billing-information-section h2 {
-  margin: 0 auto;
-}
-
-#personal-information-section input, #billing-information-section input, #personal-information-section select, #billing-information-section select {
-  width: 100%;
-  margin-bottom: 1em;
-  margin-top: 1em;
-  border: none;
-  border-bottom: 2px solid #424242;
-  background-color: transparent;
-  font-size: 16px;
-  outline: none;
-}
-
-#personal-information-section ul, #billing-information-section ul {
-  padding-left: 2em;
-}
-
-#billing-information-section ul>li>ul {
-  display: flex;
-  padding: 0;
-}
-
-#billing-information-section ul>li>ul>li {
-  margin-right: 5%;
 }
 
 .size-15 {
