@@ -10,10 +10,14 @@ h2 {
   margin: 0 auto;
 }
 
-ul.unformatted {
+ul {
   list-style-type: none;
   padding-left: 0;
   margin: 0 auto;
+}
+
+input {
+  text-overflow: ellipsis;
 }
 
 /* ------------------------------- Header ------------------------------- */
@@ -42,7 +46,7 @@ nav a.logo {
 
 /* Header nav right links */
 
-header nav ul.unformatted {
+header nav ul {
   float: right;
   line-height: 70px;
   margin-right: 3%;
@@ -99,13 +103,13 @@ main {
 
 /* ----- Subsections -----*/
 
-.secondary-section {
+.sections-container section {
   display: flex;
   margin-top: 2em;
   margin-bottom: 2em;
 }
 
-.secondary-section ul {
+.sections-container section ul {
   padding-left: 2em;
 }
 

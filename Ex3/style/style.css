@@ -1,35 +1,26 @@
+/* ------------------------ Main styles and resets ---------------------- */
+
 body {
   margin: 0 auto;
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
   background: #EEEEEE;
 }
 
-header nav ul, .sections-account ul, footer ul {
+h2 {
+  margin: 0 auto;
+}
+
+ul {
   list-style-type: none;
   padding-left: 0;
   margin: 0 auto;
 }
 
-header nav li {
-  display: inline-block;
-  padding: 0 10px;
+input {
+  text-overflow: ellipsis;
 }
 
-header nav ul {
-  float: right;
-  line-height: 70px;
-  margin-right: 3%;
-}
-
-header nav a {
-  color: #FFFFFF;
-  text-decoration: none;
-  display: block;
-}
-
-header nav li:hover {
-  background-color: #424242;
-}
+/* ------------------------------- Header ------------------------------- */
 
 header nav {
   background-color: rgba(0, 0, 0, 0.9);
@@ -38,6 +29,114 @@ header nav {
   width: 100%;
   top: 0;
 }
+
+/* Logo */
+
+nav a.logo {
+  display: inline-block;
+  line-height: 70px;
+  margin-left: 3%;
+}
+
+.logo img {
+  width: 75px;
+  height: 45px;
+  vertical-align: middle;
+}
+
+/* Header nav right links */
+
+header nav ul {
+  float: right;
+  line-height: 70px;
+  margin-right: 3%;
+}
+
+header nav li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+header nav li:hover {
+  background-color: #424242;
+}
+
+header nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  display: block;
+}
+
+/* -----------    Body main wrapper (margins needed to have a nav fixed
+and margin  to the footer) ------------------------------ */
+
+main {
+  margin: 6em 0 2em 0;
+  padding: 0 5%;
+}
+
+/* ------------------------ Sections container -------------------------- */
+
+.sections-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  padding: 20px 30px 10px;
+}
+
+.sections-container header h2 {
+  font-weight: 100;
+}
+
+.sections-container input, .sections-container select {
+  width: 100%;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  border: none;
+  border-bottom: 2px solid #424242;
+  background-color: transparent;
+  font-size: 16px;
+  outline: none;
+}
+
+/* ----- Subsections -----*/
+
+.sections-container section {
+  display: flex;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.sections-container section ul {
+  padding-left: 2em;
+}
+
+/* Profile picture style (responsive, centered) */
+
+.profile-picture {
+  padding-top: 0.5em;
+}
+
+.profile-picture img {
+  width: 60%;
+  margin: auto;
+  display: block;
+}
+
+/* Special styles for billing information section (third row with three elements) */
+
+#billing-information-section ul>li>ul {
+  display: flex;
+  padding: 0;
+}
+
+#billing-information-section ul>li>ul>li {
+  margin-right: 5%;
+}
+
+/* ---------------------------- Footer ----------------------------- */
 
 footer {
   height: 70px;
@@ -67,44 +166,9 @@ footer a {
   display: block;
 }
 
-header nav a.logo {
-  display: inline-block;
-  line-height: 70px;
-  margin-left: 3%;
-}
+/* ---------------------------- Special classes ---------------------------- */
 
-header nav img {
-  width: 75px;
-  height: 45px;
-  vertical-align: middle;
-}
-
-.profile-picture {
-  padding-top: 0.5em;
-}
-
-.profile-picture img {
-  width: 60%;
-  margin: auto;
-  display: block;
-}
-
-.main {
-  margin: 6em 0 2em 0;
-}
-
-.sections-account {
-  max-width: 1024px;
-  margin: 0 auto;
-  background-color: #FFFFFF;
-  border-radius: 2px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  padding: 20px 30px 10px;
-}
-
-.sections-account header h2 {
-  font-weight: 100;
-}
+/* Divider line used in footer */
 
 .divider {
   border-left: 1px solid #FFFFFF;
@@ -113,41 +177,7 @@ header nav img {
   padding: 0;
 }
 
-#personal-information-section, #billing-information-section {
-  display: flex;
-  width: 100%;
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
-
-#personal-information-section h2, #billing-information-section h2 {
-  margin: 0 auto;
-}
-
-#personal-information-section input, #billing-information-section input, #personal-information-section select, #billing-information-section select {
-  width: 100%;
-  margin-bottom: 1em;
-  margin-top: 1em;
-  border: none;
-  border-bottom: 2px solid #424242;
-  background-color: transparent;
-  font-size: 16px;
-  outline: none;
-  text-overflow: ellipsis;
-}
-
-#personal-information-section ul, #billing-information-section ul {
-  padding-left: 2em;
-}
-
-#billing-information-section ul>li>ul {
-  display: flex;
-  padding: 0;
-}
-
-#billing-information-section ul>li>ul>li {
-  margin-right: 5%;
-}
+/* Elements size classes (responsive use) */
 
 .size-15 {
   width: 15%;
@@ -192,7 +222,7 @@ header nav img {
       display: block;
     }
 
-    .sections-account header {
+    .sections-container header {
       margin-bottom: 1em;
     }
 
@@ -207,28 +237,22 @@ header nav img {
         width: 100%;
     }
 
-    .main {
-      margin-top: 0;
-      margin-bottom: 0;
+    /* ---------- Header ------ */
+
+    header nav {
+      position: static;
+      height: 13em;
     }
 
-    #personal-information-section, #billing-information-section {
-      display: block;
+    /* Logo */
+
+    nav a.logo {
+      float: none;
     }
 
-    #personal-information-section ul, #billing-information-section ul {
-      padding-left: 1em;
-    }
+    /* Header nav right links */
 
-    .sections-account header {
-      margin-bottom: 1em;
-    }
-
-    .sections-account {
-      width: auto;
-    }
-
-    header nav ul {
+    header nav ul.unformatted {
       margin-right: 0;
       background-color: rgba(0, 0, 0, 0.9);
       line-height: 40px;
@@ -246,14 +270,32 @@ header nav img {
       clear: right;
     }
 
-    a.logo {
-      float: none;
+    /* -----------  Body main wrapper ------------------------------ */
+
+    main {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0;
     }
 
-    header nav {
-      position: static;
-      height: 13em;
+    /* ------------ Sections container -------------------------- */
+
+    .sections-container header {
+      margin-bottom: 1em;
     }
+
+    /* ----- Subsections -----*/
+
+    .sections-container section {
+      display: block;
+    }
+
+    .sections-container section ul {
+      padding-left: 1em;
+    }
+
+    /* Special styles for billing information section
+    (third row with three elements) */
 
     #billing-information-section ul>li>ul {
       display: block;
