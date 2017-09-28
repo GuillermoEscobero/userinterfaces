@@ -1,4 +1,4 @@
-/* Exercise 1 CSS file
+/* Exercise 3 CSS file
  * Guillermo Escobero & Raul Olmedo
  * Group 89 */
 
@@ -201,4 +201,113 @@ footer a {
 
 .size-70 {
   width: 70%;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For tablets: */
+    [class*="size-"] {
+        width: 50%;
+    }
+
+    .size-40 {
+      width: 100%;
+    }
+
+    .size-30 {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .sections-container section {
+      display: block;
+    }
+
+    #personal-information-section header {
+      display: block;
+    }
+
+    .sections-container header {
+      margin-bottom: 1em;
+    }
+
+    .size-60 {
+      width: 100%;
+    }
+
+    main {
+      padding: 0;
+      margin: 4em 0 0 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    /* For mobile phones: */
+    [class*="size-"] {
+        width: 100%;
+    }
+
+    /* ---------- Header ------ */
+
+    header nav {
+      position: static;
+      height: 13em;
+    }
+
+    /* Logo */
+
+    nav a.logo {
+      float: none;
+    }
+
+    /* Header nav right links */
+
+    header nav ul.unformatted {
+      margin-right: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      line-height: 40px;
+      width: 100%;
+      float: none;
+    }
+
+    header nav li {
+      display: block;
+      padding: 0 10px;
+    }
+
+    header nav a {
+      float: right;
+      clear: right;
+    }
+
+    /* -----------  Body main wrapper ------------------------------ */
+
+    main {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0;
+    }
+
+    /* ------------ Sections container -------------------------- */
+
+    .sections-container header {
+      margin-bottom: 1em;
+    }
+
+    /* ----- Subsections -----*/
+
+    .sections-container section {
+      display: block;
+    }
+
+    .sections-container section ul {
+      padding-left: 1em;
+    }
+
+    /* Special styles for billing information section
+    (third row with three elements) */
+
+    #billing-information-section ul>li>ul {
+      display: block;
+    }
+
 }
