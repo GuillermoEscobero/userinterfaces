@@ -140,6 +140,15 @@ main {
   margin-right: 5%;
 }
 
+#ok-buttons input {
+  width: auto;
+  margin-right: 1em;
+}
+
+#ok-buttons button {
+  margin: 1em 3em;
+}
+
 /* ---------------------------- Footer ----------------------------- */
 
 footer {
