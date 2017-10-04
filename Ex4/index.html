@@ -12,14 +12,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body onload="checkCookies()">
 
   <header>
     <!--Navigation bar -->
     <nav>
       <!--Logo of the app -->
-      <a href="#" class="logo"><img src="images/logo.svg" alt="Lococo">
-            </a>
+      <a href="#" class="logo"><img src="images/logo.svg" alt="Lococo"></a>
       <ul>
         <!--Create a list of links -->
         <li><a href="#">Explore</a>
@@ -32,6 +31,25 @@
     </nav>
   </header>
 
+  <!-- The Modal -->
+  <div id="login-modal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <header>
+        <h2>Login</h2>
+      </header>
+      <div class="modal-body">
+        <form>
+          Email<br>
+          <input type="email" name="email"></input>
+          Password<br>
+          <input type="password" name="password"></input>
+          <button class="btn-form" onclick="submitLogin()">Submit</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
   <main>
     <!--Container of both personal information and billing sections -->
     <div class="sections-container">
@@ -47,15 +65,15 @@
           <ul>
             <li>Username
               <br>
-              <input type="text" name="username" value="John Doe" disabled>
+              <input type="text" name="username" value="John Doe">
             </li>
             <li>Password
               <br>
-              <input type="password" name="passw" value="1234admin" disabled>
+              <input type="password" name="password" value="1234admin">
             </li>
           </ul>
         </div>
-        </section>
+      </section>
       <!--Horizontal line separator -->
       <hr>
       <!--Subsection showing the personal information -->
@@ -70,7 +88,7 @@
             <!--All fields are disabled, since it is supposed to contain previous information that may or may not be changed -->
             <li>First &#38; Last Name
               <br>
-              <input type="text" name="fullname" value="John Doe" disabled>
+              <input type="text" name="fullname" value="John Doe">
             </li>
             <li>Email
               <br>
@@ -78,7 +96,7 @@
             </li>
             <li>Birthdate
               <br>
-              <input type="date" name="bday" value="1970-01-01" disabled>
+              <input type="date" name="bday" value="1970-01-01">
             </li>
           </ul>
         </div><!-- >
@@ -90,16 +108,16 @@
             <li>Language
               <br>
               <!--Selector for language -->
-              <select>
-                                <option value="spa">Spanish</option>
-                                <option value="eng">English</option>
-                                <option value="fra">French</option>
-                                <option value="ger">German</option>
-                            </select>
+              <select name="language">
+                <option value="spa">Spanish</option>
+                <option value="eng">English</option>
+                <option value="fra">French</option>
+                <option value="ger">German</option>
+              </select>
             </li>
             <li>Path to photo
               <br>
-              <input type="text" name="photo-path" value="Downloads/photo.jpg" disabled>
+              <input type="text" name="photo-path" value="Downloads/photo.jpg">
             </li>
             <li>Picture
               <br>
@@ -122,7 +140,7 @@
           <ul>
             <li>Address
               <br>
-              <input type="text" name="address" disabled value="Av. de la Universidad, 30. Leganés">
+              <input type="text" name="address" value="Av. de la Universidad, 30. Leganés">
             </li>
             <!--Using FontAwesome icons once again -->
             <li>Payment method&nbsp;<i class="fa fa-cc-visa" aria-hidden="true"></i>
@@ -146,7 +164,7 @@
                 </li>
                 <li class="size-15">Code
                   <br>
-                  <input type="password" name="csv" maxlength="3" value="123">
+                  <input type="password" name="card-csv" maxlength="3" value="123">
                 </li>
               </ul>
             </li>
@@ -177,6 +195,8 @@
       </li>
     </ul>
   </footer>
+    <script src="js/script.js"></script>
+
 </body>
 
 </html>
