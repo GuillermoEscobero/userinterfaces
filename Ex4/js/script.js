@@ -21,30 +21,69 @@ function getCookie(cookieName) {
   return "";
 }
 
-function checkCookies() {
-  var userEmail = getCookie("email");
-  if (userEmail != "") {
-    document.getElementById('login-modal').style.display =  "none";
-    loadCookiesData();
-  }
-}
-
 function submitLogin() {
-  var loginInputs = document.getElementById('login-modal');
-  var userEmail = loginInputs.getElementsByName('email');
-  var userPassword = loginInputs.getElementsByName('password');
-  setCookie("email", userEmail, 30);
-  setCookie("password", userPassword, 30);
+  var userEmail = document.getElementById('login-email').value;
+  var userPassword = document.getElementById('login-password').value;
+  document.getElementById('login-modal').style.display =  "none";
+  if (getCookie("email") != userEmail) {
+    setCookie("email", userEmail, 30);
+    setCookie("password", userPassword, 30);
+  }
+  console.log(getCookie("email"));
+  console.log(getCookie("password"));
   loadCookiesData();
 }
 
 function loadCookiesData() {
-  var fields = ['username', 'password', 'fullname', 'email', 'bday',
-   'language', 'photo-path', 'address', 'payment-method', 'card-number',
-   'card-valid', 'card-csv'];
-  var formFields = document.getElementsByClassName('sections-container')[0].getElementsByTagName('input');
-  console.log(formFields);
-  for (var field in fields) {
-    formFields.getElementsByName(field)[0].value = getCookie(field);
+  var formFields = document.getElementsByClassName('sections-container')[0].querySelectorAll('input, select');
+  for (var i = 0; i < formFields.length; i++) {
+    formFields[i].value = getCookie(formFields[i].name);
   }
+}
+
+function submitChanges() {
+  var formFields = document.getElementsByClassName('sections-container')[0].querySelectorAll('input, select');
+  var changes = "";
+  for (var i = 0; i < formFields.length; i++) {
+    if (getCookie(formFields[i].name) != formFields[i].value) {
+      changes += "- " + formFields[i].name + "\n";
+      setCookie(formFields[i].name, formFields[i].value, 30);
+    }
+  }
+  alert("Fields modified:\n" + changes);
+}
+
+function changeMethod() {
+  $(document).ready(function () {
+      switch ($("#payment-method").val()) {
+        case "credit-card":
+          $("#form-credit-card").show();
+          $("#form-paypal").hide();
+          $("#form-bank-transfer").hide();
+          $("#payment-icon").removeClass("fa-credit-card-alt");
+          $("#payment-icon").removeClass("fa-cc-paypal");
+          $("#payment-icon").removeClass("fa-bank");
+          $("#payment-icon").addClass("fa-credit-card-alt");
+          break;
+        case "paypal":
+          $("#form-credit-card").hide();
+          $("#form-paypal").show();
+          $("#form-bank-transfer").hide();
+          $("#payment-icon").removeClass("fa-credit-card-alt");
+          $("#payment-icon").removeClass("fa-cc-paypal");
+          $("#payment-icon").removeClass("fa-bank");
+          $("#payment-icon").addClass("fa-cc-paypal");
+          break;
+        case "bank-transfer":
+          $("#form-credit-card").hide();
+          $("#form-paypal").hide();
+          $("#form-bank-transfer").show();
+          $("#payment-icon").removeClass("fa-credit-card-alt");
+          $("#payment-icon").removeClass("fa-cc-paypal");
+          $("#payment-icon").removeClass("fa-bank");
+          $("#payment-icon").addClass("fa-bank");
+          break;
+        default:
+      }
+  });
 }

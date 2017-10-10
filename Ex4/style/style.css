@@ -315,9 +315,11 @@ footer a {
     /* Special styles for billing information section
     (third row with three elements) */
 
-    #billing-information-section ul>li>ul {
+    #form-credit-card ul {
       display: block;
     }
+
+
 
 }
 
@@ -379,5 +381,13 @@ footer a {
   color: white;
   margin: 1em 0;
   font-size: 1em;
+}
 
+.hide {
+  display: none;
+}
+
+.well {
+  background-color: rgb(196, 196, 196);
+  padding: 10px;
 }

@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body onload="checkCookies()">
+<body>
 
   <header>
     <!--Navigation bar -->
@@ -41,10 +41,10 @@
       <div class="modal-body">
         <form>
           Email<br>
-          <input type="email" name="email"></input>
+          <input id="login-email" type="email" name="email" required></input>
           Password<br>
-          <input type="password" name="password"></input>
-          <button class="btn-form" onclick="submitLogin()">Submit</button>
+          <input id="login-password" type="password" name="password" required></input>
+          <button class="btn-form" type="submit" onclick="submitLogin()">Submit</button>
         </form>
       </div>
     </div>
@@ -65,11 +65,11 @@
           <ul>
             <li>Username
               <br>
-              <input type="text" name="username" value="John Doe">
+              <input type="text" name="username" required>
             </li>
             <li>Password
               <br>
-              <input type="password" name="password" value="1234admin">
+              <input type="password" name="password" maxlength="8" pattern="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" required>
             </li>
           </ul>
         </div>
@@ -85,18 +85,17 @@
         <!--Div with the information itself -->
         <div class="size-30">
           <ul>
-            <!--All fields are disabled, since it is supposed to contain previous information that may or may not be changed -->
             <li>First &#38; Last Name
               <br>
-              <input type="text" name="fullname" value="John Doe">
+              <input type="text" name="fullname" required>
             </li>
             <li>Email
               <br>
-              <input type="email" name="email" value="johndoe@uc3m.es" disabled>
+              <input type="email" name="email" disabled required>
             </li>
             <li>Birthdate
               <br>
-              <input type="date" name="bday" value="1970-01-01">
+              <input type="date" name="bday" required>
             </li>
           </ul>
         </div><!-- >
@@ -117,7 +116,7 @@
             </li>
             <li>Path to photo
               <br>
-              <input type="text" name="photo-path" value="Downloads/photo.jpg">
+              <input type="text" name="photo-path">
             </li>
             <li>Picture
               <br>
@@ -140,42 +139,50 @@
           <ul>
             <li>Address
               <br>
-              <input type="text" name="address" value="Av. de la Universidad, 30. Leganés">
+              <input type="text" name="address" required>
             </li>
             <!--Using FontAwesome icons once again -->
-            <li>Payment method&nbsp;<i class="fa fa-cc-visa" aria-hidden="true"></i>
+            <li>Payment method&nbsp;<i id="payment-icon" class="fa fa-credit-card-alt" aria-hidden="true"></i>
               <br>
-              <select id="payment-method">
+              <select id="payment-method" name="payment-method" onchange="changeMethod()" required>
                                 <option value="credit-card">Credit card</option>
                                 <option value="paypal">Paypal</option>
                                 <option value="bank-transfer">Bank transfer</option>
                             </select>
             </li>
             <!--List containing the rest of the information created -->
-            <li>
+            <li id="form-credit-card">
               <ul>
                 <li class="size-70">Number
                   <br>
-                  <input type="text" name="card-number" maxlength="16" value="1234567890123456">
+                  <input type="text" name="card-number" maxlength="16">
                 </li>
                 <li class="size-15">Valid Thru
                   <br>
-                  <input type="text" name="card-valid" maxlength="5" value="05/19">
+                  <input type="text" name="card-valid" maxlength="5">
                 </li>
                 <li class="size-15">Code
                   <br>
-                  <input type="password" name="card-csv" maxlength="3" value="123">
+                  <input type="password" name="card-csv" maxlength="3">
                 </li>
               </ul>
             </li>
+            <div id="form-bank-transfer" class="hide well">
+              <p>LOCOCO S.A.</p>
+              <p>ES12 1234 1234 1234 1234</p>
+              <p>DINEROSBANK, S.A.</p>
+            </div>
+            <div id="form-paypal" class="hide">
+              <p>PAYPAL</p>
+            </div>
           </ul>
         </div>
       </section>
       <hr>
       <section id="ok-buttons" style="display: block;">
-        <form>
-          <input type="checkbox" name="conditions" value="ok-conditions">I have read and agree to terms of use, privacy policy and use of cookies.<br>
-          <button type="button" name="submit">Submit</button>
+        <form onsubmit="submitChanges()">
+          <input type="checkbox" name="conditions" value="ok-conditions" required>I have read and agree to terms of use, privacy policy and use of cookies.<br>
+          <button type="submit" name="submit">Save</button>
           <button type="button" name="cancel">Cancel</button>
         </form>
       </section>
@@ -195,7 +202,8 @@
       </li>
     </ul>
   </footer>
-    <script src="js/script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/script.js"></script>
 
 </body>
 
