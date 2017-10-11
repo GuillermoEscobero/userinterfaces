@@ -391,3 +391,7 @@ footer a {
   background-color: rgb(196, 196, 196);
   padding: 10px;
 }
+
+.block {
+  display: block;
+}

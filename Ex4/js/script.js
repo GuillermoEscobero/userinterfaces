@@ -29,9 +29,8 @@ function submitLogin() {
     setCookie("email", userEmail, 30);
     setCookie("password", userPassword, 30);
   }
-  console.log(getCookie("email"));
-  console.log(getCookie("password"));
   loadCookiesData();
+  changePaymentMethod();
 }
 
 function loadCookiesData() {
@@ -53,37 +52,31 @@ function submitChanges() {
   alert("Fields modified:\n" + changes);
 }
 
-function changeMethod() {
-  $(document).ready(function () {
-      switch ($("#payment-method").val()) {
-        case "credit-card":
-          $("#form-credit-card").show();
-          $("#form-paypal").hide();
-          $("#form-bank-transfer").hide();
-          $("#payment-icon").removeClass("fa-credit-card-alt");
-          $("#payment-icon").removeClass("fa-cc-paypal");
-          $("#payment-icon").removeClass("fa-bank");
-          $("#payment-icon").addClass("fa-credit-card-alt");
-          break;
-        case "paypal":
-          $("#form-credit-card").hide();
-          $("#form-paypal").show();
-          $("#form-bank-transfer").hide();
-          $("#payment-icon").removeClass("fa-credit-card-alt");
-          $("#payment-icon").removeClass("fa-cc-paypal");
-          $("#payment-icon").removeClass("fa-bank");
-          $("#payment-icon").addClass("fa-cc-paypal");
-          break;
-        case "bank-transfer":
-          $("#form-credit-card").hide();
-          $("#form-paypal").hide();
-          $("#form-bank-transfer").show();
-          $("#payment-icon").removeClass("fa-credit-card-alt");
-          $("#payment-icon").removeClass("fa-cc-paypal");
-          $("#payment-icon").removeClass("fa-bank");
-          $("#payment-icon").addClass("fa-bank");
-          break;
-        default:
-      }
-  });
-}
+function changePaymentMethod() {
+    $('#payment-icon').removeClass("fa-credit-card-alt");
+    $('#payment-icon').removeClass("fa-cc-paypal");
+    $('#payment-icon').removeClass("fa-bank");
+    $('#form-credit-card').hide();
+    $('#form-paypal').hide();
+    $('#form-bank-transfer').hide();
+    switch ($('#payment-method').val()) {
+      case "credit-card":
+        $('#form-credit-card').show();
+        $('#payment-icon').addClass("fa-credit-card-alt");
+        break;
+      case "paypal":
+        $('#form-paypal').show();
+        $('#payment-icon').addClass("fa-cc-paypal");
+        // var fields = $('#form-credit-card').getElementsByTagName('input');
+        // console.log(fields);
+        // for (var i = 0; i < fields.length; i++) {
+        //   fields[i].attr('required', 'false');
+        // }
+        break;
+      case "bank-transfer":
+        $('#form-bank-transfer').show();
+        $('#payment-icon').addClass("fa-bank");
+        break;
+      default:
+    }
+  }

@@ -39,12 +39,12 @@
         <h2>Login</h2>
       </header>
       <div class="modal-body">
-        <form>
+        <form onsubmit="submitLogin(); return false;">
           Email<br>
-          <input id="login-email" type="email" name="email" required></input>
+          <input id="login-email" type="email" name="email" required>
           Password<br>
-          <input id="login-password" type="password" name="password" required></input>
-          <button class="btn-form" type="submit" onclick="submitLogin()">Submit</button>
+          <input id="login-password" type="password" name="password" required>
+          <button class="btn-form" type="submit" name="submit">Submit</button>
         </form>
       </div>
     </div>
@@ -55,6 +55,7 @@
     <div class="sections-container">
       <h1>My Account details</h1>
       <hr>
+      <form onsubmit="submitChanges(); return false;">
       <section id="login-data-section">
         <!--Header with the title of the section-->
         <header class="size-40">
@@ -69,7 +70,7 @@
             </li>
             <li>Password
               <br>
-              <input type="password" name="password" maxlength="8" pattern="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" required>
+              <input type="password" name="password" maxlength="8" pattern="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?!.*\s).*$" required>
             </li>
           </ul>
         </div>
@@ -144,48 +145,47 @@
             <!--Using FontAwesome icons once again -->
             <li>Payment method&nbsp;<i id="payment-icon" class="fa fa-credit-card-alt" aria-hidden="true"></i>
               <br>
-              <select id="payment-method" name="payment-method" onchange="changeMethod()" required>
-                                <option value="credit-card">Credit card</option>
-                                <option value="paypal">Paypal</option>
-                                <option value="bank-transfer">Bank transfer</option>
-                            </select>
+              <select id="payment-method" name="payment-method" onchange="changePaymentMethod()" required>
+                  <option value="credit-card">Credit card</option>
+                  <option value="paypal">Paypal</option>
+                  <option value="bank-transfer">Bank transfer</option>
+              </select>
             </li>
             <!--List containing the rest of the information created -->
             <li id="form-credit-card">
               <ul>
                 <li class="size-70">Number
                   <br>
-                  <input type="text" name="card-number" maxlength="16">
+                  <input type="text" name="card-number" maxlength="16" required>
                 </li>
                 <li class="size-15">Valid Thru
                   <br>
-                  <input type="text" name="card-valid" maxlength="5">
+                  <input type="text" name="card-valid" maxlength="5" required>
                 </li>
                 <li class="size-15">Code
                   <br>
-                  <input type="password" name="card-csv" maxlength="3">
+                  <input type="password" name="card-csv" maxlength="3" required>
                 </li>
               </ul>
             </li>
+          </ul>
             <div id="form-bank-transfer" class="hide well">
               <p>LOCOCO S.A.</p>
               <p>ES12 1234 1234 1234 1234</p>
               <p>DINEROSBANK, S.A.</p>
             </div>
             <div id="form-paypal" class="hide">
-              <p>PAYPAL</p>
+              <!-- PayPal Logo --><table border="0" cellpadding="10" cellspacing="0" align="center"><tr><td align="center"></td></tr><tr><td align="center"><a href="https://www.paypal.com/uk/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/uk/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_now_accepting_pp_2line_w.png" border="0" alt="Now accepting PayPal"></a> </td></tr></table><!-- PayPal Logo -->
             </div>
-          </ul>
         </div>
       </section>
       <hr>
-      <section id="ok-buttons" style="display: block;">
-        <form onsubmit="submitChanges()">
+      <section id="ok-buttons" class="block">
           <input type="checkbox" name="conditions" value="ok-conditions" required>I have read and agree to terms of use, privacy policy and use of cookies.<br>
-          <button type="submit" name="submit">Save</button>
-          <button type="button" name="cancel">Cancel</button>
-        </form>
+          <button class="btn-form" type="submit" name="submit">Save</button>
+          <button class="btn-form" type="button" onclick="loadCookiesData()" name="cancel">Cancel</button>
       </section>
+      </form>
     </div>
   </main>
   <!--Footer section of the web created -->
