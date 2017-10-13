@@ -18,20 +18,45 @@
         <!--Navigation bar -->
         <nav>
             <!--Logo of the app -->
-            <a href="#" class="logo"><img src="images/logo.svg" alt="Lococo">
+            <a href="#" class="logo">
+                <img src="images/logo.svg" alt="Lococo">
             </a>
             <ul>
                 <!--Create a list of links -->
-                <li><a href="#">Explore</a>
+                <li>
+                    <a href="#">Explore</a>
                 </li>
-                <li><a href="#">My Account</a>
+                <li>
+                    <a href="#">My Account</a>
                 </li>
-                <li><a href="#">JaneDoe12&nbsp;<img class="circle photo-id-nav" src="images/idphoto.png" alt="profile-picture"></a>
+                <li>
+                    <a href="#">JaneDoe12&nbsp;
+                        <img class="circle photo-id-nav" src="images/idphoto.png" alt="profile-picture">
+                    </a>
                 </li>
             </ul>
         </nav>
     </header>
 
+    <!-- The Modal -->
+    <div id="login-modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <header>
+                <h2>Login</h2>
+            </header>
+            <div class="modal-body">
+                <form onsubmit="submitLogin(); return false;">
+                    Email
+                    <br>
+                    <input id="login-email" type="email" name="email" required> Password
+                    <br>
+                    <input id="login-password" type="password" name="password" required>
+                    <button class="btn-form" type="submit" name="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <main>
         <!--Container with video-suggestions and main-player sections-->
@@ -42,10 +67,16 @@
                     <h2>What is GitHub?</h2>
                     <ul>
                         <!--Icons from FontAwesome -->
-                        <li><i class="fa fa-heart-o" aria-hidden="true"></i> 300 Likes </li>
-                        <li><i class="fa fa-share" aria-hidden="true"></i> 450 times shared</li>
                         <li>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <i class="fa fa-heart-o" aria-hidden="true"></i> 300 Likes </li>
+                        <li>
+                            <i class="fa fa-share" aria-hidden="true"></i> 450 times shared</li>
+                        <li>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </li>
                     </ul>
                 </aside>
@@ -71,21 +102,27 @@
                             <img src="images/hqdefault.jpg" alt="Flutter SDK">
                         </div>
                         <!--Section with the title of the video -->
-                        <h2>Flutter SDK <i class="fa fa-plus-square-o" aria-hidden="true"></i></h2>
+                        <h2>Flutter SDK
+                            <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                        </h2>
                     </div>
                     <!--Card 2 -->
                     <div class="size-33 video-suggested-card">
                         <div class="video-suggested-img-wrapper">
                             <img src="images/hqdefault-2.jpg" alt="Kotlin in Android">
                         </div>
-                        <h2>Kotlin in Android <i class="fa fa-plus-square-o" aria-hidden="true"></i></h2>
+                        <h2>Kotlin in Android
+                            <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                        </h2>
                     </div>
                     <!--Card 3 -->
                     <div class="size-33 video-suggested-card">
                         <div class="video-suggested-img-wrapper">
                             <img src="images/hqdefault-3.jpg" alt="Material Design">
                         </div>
-                        <h2>Material Design <i class="fa fa-plus-square-o" aria-hidden="true"></i></h2>
+                        <h2>Material Design
+                            <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                        </h2>
                     </div>
                 </div>
             </section>
@@ -94,14 +131,21 @@
     <!--Footer section of the web created -->
     <footer>
         <ul>
-            <li><a href="../Ex1/index.html">Lococo 2017 ©</a>
+            <li>
+                <a href="../Ex1/index.html">Lococo 2017 ©</a>
             </li>
             <!--Vertical divider (see .divider class in the .css) -->
             <li class="divider"></li>
-            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <li>
+                <a href="#">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
             </li>
             <li class="divider"></li>
-            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <li>
+                <a href="#">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
             </li>
         </ul>
     </footer>
