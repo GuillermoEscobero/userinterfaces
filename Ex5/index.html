@@ -46,7 +46,7 @@
                 <h2>Login</h2>
             </header>
             <div class="modal-body">
-                <form onsubmit="submitLogin(); return false;">
+                <form onsubmit="onLoginSubmit(); return false;">
                     Email
                     <br>
                     <input id="login-email" type="email" name="email" required> Password
@@ -67,18 +67,18 @@
                     <h2>What is GitHub?</h2>
                     <ul>
                         <!--Icons from FontAwesome -->
-                        <li>
+                        <li id="fav-button"> 
                             <i class="fa fa-heart-o" aria-hidden="true"></i> 300 Likes </li>
-                        <li>
+                        <li id="share-button">
                             <i class="fa fa-share" aria-hidden="true"></i> 450 times shared</li>
                         <li>
-                            /* cSpell:disable */
+                            <!-- cSpell:disable -->
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                                 labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                                 laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
                                 voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
                                 non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            /* cSpell:enable */
+                            <!-- cSpell:enable -->
                         </li>
                     </ul>
                 </aside>
@@ -151,6 +151,7 @@
             </li>
         </ul>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
