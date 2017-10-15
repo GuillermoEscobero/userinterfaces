@@ -39,9 +39,9 @@
     </header>
 
     <!-- The Modal -->
-    <div id="login-modal" class="modal">
+    <!-- <div id="login-modal" class="modal"> -->
         <!-- Modal content -->
-        <div class="modal-content">
+        <!-- <div class="modal-content">
             <header>
                 <h2>Login</h2>
             </header>
@@ -56,7 +56,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <main>
         <!--Container with video-suggestions and main-player sections-->
@@ -68,9 +68,9 @@
                     <ul>
                         <!--Icons from FontAwesome -->
                         <li id="fav-button"> 
-                            <i class="fa fa-heart-o" aria-hidden="true"></i> 300 Likes </li>
+                            <i class="fa fa-heart-o" aria-hidden="true" onclick="onIconClick('fav-button')"></i> 300 Likes </li>
                         <li id="share-button">
-                            <i class="fa fa-share" aria-hidden="true"></i> 450 times shared</li>
+                            <i class="fa fa-share" aria-hidden="true" onclick="onIconClick('share-button')"></i> 450 Times Shared</li>
                         <li>
                             <!-- cSpell:disable -->
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
@@ -98,7 +98,7 @@
                 <!--Main container with the three suggestion cards -->
                 <div class="suggestions">
                     <!--Card 1 -->
-                    <div class="size-33 video-suggested-card">
+                    <div class="size-33 video-suggested-card" ondrag="onDragCard()" ondrop="onDropCard()">
                         <!--Section with the photo of the video -->
                         <div class="video-suggested-img-wrapper">
                             <img src="images/hqdefault.jpg" alt="Flutter SDK">
