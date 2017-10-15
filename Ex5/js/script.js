@@ -46,8 +46,30 @@ function loadDataOnCookie() {
     //TODO: load the name and the profile picture
 }
 
-function onButtonClick (buttonId) {
-    //FIXME: esto han sido unos triplitos
-    document.getElementById("fav-button").addEventListener("click",this,true);
-    onclick(document.getElementById("fav-button").display = "none");
+function onIconClick (buttonId) {
+    //TODO: check if it works in other web browsers -apart from firefox-
+    var textNode = document.getElementById(buttonId).lastChild;
+
+    if (textNode.previousSibling.className == "fa fa-heart-o") {
+        textNode.textContent = " " + addOne(textNode.textContent) + " Likes ";
+    }
+    else
+        textNode.textContent = " " + addOne(textNode.textContent) + " Times Shared ";
 }
+
+function addOne (textToIncrement) {
+    var number = parseInt(textToIncrement);
+    return number + 1;
+}
+
+function onDragCard () {
+    console.log("Item dragged");
+}
+
+function onDropCard() {
+    console.log("Item dropped");
+}
+
+//TODO: drag & drop part
+//TODO: cookies part
+//TODO: show description when button "+" clicked
