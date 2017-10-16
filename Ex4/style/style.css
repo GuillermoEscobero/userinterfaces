@@ -1,4 +1,4 @@
-/* Exercise 3 CSS file
+/* Exercise 4 CSS file
  * Guillermo Escobero & Raul Olmedo
  * Group 89 */
 
@@ -323,10 +323,6 @@ footer a {
       display: block;
     }
 
-    #form-bank-transfer {
-      margin-left: 2em;
-    }
-
 }
 
 /* The Modal (background) */
@@ -400,4 +396,8 @@ footer a {
 
 .block {
   display: block;
+}
+
+#form-bank-transfer {
+  margin-left: 2em;
 }
