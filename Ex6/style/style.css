@@ -1,10 +1,22 @@
 .card {
   display: inline-block;
-  background-color: red;
-  border: 6px solid grey;
-  width: 25%;
+  width: 100px;
   height: 100px;
   margin: 10px;
+}
+
+.front {
+  background-color: red;
+  border: 6px solid grey;
+}
+
+.back {
+  background-color: white;
+  border: 6px solid grey;
+}
+
+.back i {
+  font-size: 100%;
 }
 
 input {
