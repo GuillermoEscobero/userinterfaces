@@ -2,29 +2,14 @@
 
 /* Part 1 */
 
-function onLoginSubmit() {
-  // Obtain the user and password entered in the modal popup
-  var userEmail = document.getElementById('login-email').value
-  var userPassword = document.getElementById('login-password').value
-
-  // Hide modal
-  document.getElementById('login-modal').style.display = 'none'
-
-  // Check if it's the first time the user logs in
-  if (getCookie('email') !== userEmail) {
-    // Create a new cookie with the information of the user
-    setCookie('email', userEmail, 30)
-    setCookie('password', userPassword, 30)
+function submitLogin() {
+  var userEmail = document.getElementById('login-email').value;
+  document.getElementById('login-modal').style.display =  "none";
+  if (getCookie("email") != userEmail) {
+    window.location = "../Ex4/index.html";
   } else {
-    loadDataOnCookie()
+    loadCookiesData();
   }
-}
-
-function setCookie(cookieName, cookieValue, expDays) {
-  var d = new Date()
-  d.setTime(d.getTime() + (expDays * 24 * 60 * 60 * 1000))
-  var expires = 'expires=' + d.toGMTString()
-  document.cookie = cookieName + '=' + cookieValue + ';' + expires + ';path=/'
 }
 
 function getCookie(cookieName) {
@@ -43,8 +28,9 @@ function getCookie(cookieName) {
   return ''
 }
 
-function loadDataOnCookie() {
-  // TODO: load the name and the profile picture
+function loadCookiesData() {
+  document.getElementById('username').innerHTML = getCookie('username');
+  $('#user-photo').attr('src', getCookie('photo-path'));
 }
 
 
@@ -93,7 +79,7 @@ function allowDrop(ev) {
 
 function setSrc(element, URL) {
   if (element.id === 'img-flutter') {
-    
+
   }
   element.src = URL
 }
@@ -103,5 +89,4 @@ function getSrc (element) {
 }
 
 
-// TODO: cookies part
 // TODO: show description when button '+' clicked
