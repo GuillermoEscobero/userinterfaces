@@ -1,3 +1,7 @@
+
+
+/* Part 1 */
+
 function onLoginSubmit () {
   // Obtain the user and password entered in the modal popup
   var userEmail = document.getElementById('login-email').value
@@ -43,6 +47,9 @@ function loadDataOnCookie () {
   // TODO: load the name and the profile picture
 }
 
+
+/* Part 2 */
+
 function onIconClick (buttonId) {
   // TODO: check if it works in other web browsers -apart from firefox-
   var textNode = document.getElementById(buttonId).lastChild
@@ -59,14 +66,30 @@ function addOne (textToIncrement) {
   return number + 1
 }
 
-function onDragCard () {
-  console.log('Item dragged')
+
+/* Part 3 */
+
+function onDragStartCard (ev) {
+  document.getElementById('iframe').style = "pointer-events: none"
+  ev.dataTransfer.setData("URL/plain", ev.target.alt) 
 }
 
-function onDropCard () {
-  console.log('Item dropped')
+function onDropCard (ev) {
+  ev.preventDefault()
+  // FIXME: no recibe bien la URL en data transfer
+  ev.dataTransfer.getData("URL")
+  setSrcIframe ('iframe', 'https://www.youtube.com/embed/zA3o7gSpB00')
+  document.getElementById('iframe').style = "pointer-events: enable"
 }
 
-// TODO: drag & drop part
+function allowDrop(ev) {
+  ev.preventDefault()
+}
+
+function setSrcIframe (iframeId, URL) {
+  document.getElementById(iframeId).src = URL
+}
+
+
 // TODO: cookies part
 // TODO: show description when button '+' clicked

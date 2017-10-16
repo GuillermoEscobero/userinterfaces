@@ -40,8 +40,8 @@
 
     <!-- The Modal -->
     <!-- <div id="login-modal" class="modal"> -->
-        <!-- Modal content -->
-        <!-- <div class="modal-content">
+    <!-- Modal content -->
+    <!-- <div class="modal-content">
             <header>
                 <h2>Login</h2>
             </header>
@@ -67,7 +67,7 @@
                     <h2>What is GitHub?</h2>
                     <ul>
                         <!--Icons from FontAwesome -->
-                        <li id="fav-button"> 
+                        <li id="fav-button">
                             <i class="fa fa-heart-o" aria-hidden="true" onclick="onIconClick('fav-button')"></i> 300 Likes </li>
                         <li id="share-button">
                             <i class="fa fa-share" aria-hidden="true" onclick="onIconClick('share-button')"></i> 450 Times Shared</li>
@@ -84,9 +84,9 @@
                 </aside>
                 <div class="size-70">
                     <!--Container for the iframe -->
-                    <div class="video-player">
+                    <div class="video-player" ondragover="allowDrop(event)" ondrop="onDropCard(event)">
                         <!--Video inserted form YouTube -->
-                        <iframe src="https://www.youtube.com/embed/w3jLJU7DT5E" allowfullscreen></iframe>
+                        <iframe id="iframe" src="https://www.youtube.com/embed/w3jLJU7DT5E" allowfullscreen></iframe>
                     </div>
                 </div>
             </section>
@@ -98,7 +98,7 @@
                 <!--Main container with the three suggestion cards -->
                 <div class="suggestions">
                     <!--Card 1 -->
-                    <div class="size-33 video-suggested-card" ondrag="onDragCard()" ondrop="onDropCard()">
+                    <div class="size-33 video-suggested-card" draggable="true" ondragstart="onDragStartCard(event)">
                         <!--Section with the photo of the video -->
                         <div class="video-suggested-img-wrapper">
                             <img src="images/hqdefault.jpg" alt="Flutter SDK">
@@ -109,7 +109,7 @@
                         </h2>
                     </div>
                     <!--Card 2 -->
-                    <div class="size-33 video-suggested-card">
+                    <div class="size-33 video-suggested-card" draggable="true" ondragstart="onDragStartCard(event)">
                         <div class="video-suggested-img-wrapper">
                             <img src="images/hqdefault-2.jpg" alt="Kotlin in Android">
                         </div>
@@ -118,7 +118,7 @@
                         </h2>
                     </div>
                     <!--Card 3 -->
-                    <div class="size-33 video-suggested-card">
+                    <div class="size-33 video-suggested-card" draggable="true" ondragstart="onDragStartCard(event)">
                         <div class="video-suggested-img-wrapper">
                             <img src="images/hqdefault-3.jpg" alt="Material Design">
                         </div>
