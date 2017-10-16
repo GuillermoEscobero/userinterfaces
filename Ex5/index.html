@@ -84,7 +84,7 @@
                 </aside>
                 <div class="size-70">
                     <!--Container for the iframe -->
-                    <div class="video-player" ondragover="allowDrop(event)" ondrop="onDropCard(event)">
+                    <div class="video-player" draggable="true" ondragstart="onDragStartCard(event)" ondragover="allowDrop(event)" ondrop="onDropCard(event)">
                         <!--Video inserted form YouTube -->
                         <iframe id="iframe" src="https://www.youtube.com/embed/w3jLJU7DT5E" allowfullscreen></iframe>
                     </div>
@@ -101,7 +101,7 @@
                     <div class="size-33 video-suggested-card" draggable="true" ondragstart="onDragStartCard(event)">
                         <!--Section with the photo of the video -->
                         <div class="video-suggested-img-wrapper">
-                            <img src="images/hqdefault.jpg" alt="Flutter SDK">
+                            <img id="img-flutter" src="images/hqdefault.jpg" alt="Flutter SDK">
                         </div>
                         <!--Section with the title of the video -->
                         <h2>Flutter SDK
@@ -111,7 +111,7 @@
                     <!--Card 2 -->
                     <div class="size-33 video-suggested-card" draggable="true" ondragstart="onDragStartCard(event)">
                         <div class="video-suggested-img-wrapper">
-                            <img src="images/hqdefault-2.jpg" alt="Kotlin in Android">
+                            <img id="img-kotlin" src="images/hqdefault-2.jpg" alt="Kotlin in Android">
                         </div>
                         <h2>Kotlin in Android
                             <i class="fa fa-plus-square-o" aria-hidden="true"></i>
@@ -120,7 +120,7 @@
                     <!--Card 3 -->
                     <div class="size-33 video-suggested-card" draggable="true" ondragstart="onDragStartCard(event)">
                         <div class="video-suggested-img-wrapper">
-                            <img src="images/hqdefault-3.jpg" alt="Material Design">
+                            <img id="img-material" src="images/hqdefault-3.jpg" alt="Material Design">
                         </div>
                         <h2>Material Design
                             <i class="fa fa-plus-square-o" aria-hidden="true"></i>

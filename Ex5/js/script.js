@@ -2,7 +2,7 @@
 
 /* Part 1 */
 
-function onLoginSubmit () {
+function onLoginSubmit() {
   // Obtain the user and password entered in the modal popup
   var userEmail = document.getElementById('login-email').value
   var userPassword = document.getElementById('login-password').value
@@ -20,14 +20,14 @@ function onLoginSubmit () {
   }
 }
 
-function setCookie (cookieName, cookieValue, expDays) {
+function setCookie(cookieName, cookieValue, expDays) {
   var d = new Date()
   d.setTime(d.getTime() + (expDays * 24 * 60 * 60 * 1000))
   var expires = 'expires=' + d.toGMTString()
   document.cookie = cookieName + '=' + cookieValue + ';' + expires + ';path=/'
 }
 
-function getCookie (cookieName) {
+function getCookie(cookieName) {
   var name = cookieName + '='
   var decodedCookie = decodeURIComponent(document.cookie)
   var ca = decodedCookie.split(';')
@@ -43,14 +43,14 @@ function getCookie (cookieName) {
   return ''
 }
 
-function loadDataOnCookie () {
+function loadDataOnCookie() {
   // TODO: load the name and the profile picture
 }
 
 
 /* Part 2 */
 
-function onIconClick (buttonId) {
+function onIconClick(buttonId) {
   // TODO: check if it works in other web browsers -apart from firefox-
   var textNode = document.getElementById(buttonId).lastChild
 
@@ -61,7 +61,7 @@ function onIconClick (buttonId) {
   }
 }
 
-function addOne (textToIncrement) {
+function addOne(textToIncrement) {
   var number = parseInt(textToIncrement)
   return number + 1
 }
@@ -69,25 +69,37 @@ function addOne (textToIncrement) {
 
 /* Part 3 */
 
-function onDragStartCard (ev) {
+function onDragStartCard(ev) {
   document.getElementById('iframe').style = "pointer-events: none"
-  ev.dataTransfer.setData("URL/plain", ev.target.alt) 
+  ev.dataTransfer.setData('text/plain', ev.target.id)
 }
 
-function onDropCard (ev) {
+function onDropCard(ev) {
   ev.preventDefault()
-  // FIXME: no recibe bien la URL en data transfer
-  ev.dataTransfer.getData("URL")
-  setSrcIframe ('iframe', 'https://www.youtube.com/embed/zA3o7gSpB00')
-  document.getElementById('iframe').style = "pointer-events: enable"
+
+  var origin = document.getElementById(ev.dataTransfer.getData('text'))
+  var destination = document.getElementById('iframe')
+  var destSrc = getSrc(destination)
+
+  setSrc(destination, getSrc(origin))
+  setSrc(origin, destSrc)
+
+  destination.style = "pointer-events: enable"
 }
 
 function allowDrop(ev) {
   ev.preventDefault()
 }
 
-function setSrcIframe (iframeId, URL) {
-  document.getElementById(iframeId).src = URL
+function setSrc(element, URL) {
+  if (element.id === 'img-flutter') {
+    
+  }
+  element.src = URL
+}
+
+function getSrc (element) {
+  return element.src
 }
 
 
