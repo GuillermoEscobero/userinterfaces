@@ -67,11 +67,10 @@ function changePaymentMethod() {
       case "paypal":
         $('#form-paypal').show();
         $('#payment-icon').addClass("fa-cc-paypal");
-        // var fields = $('#form-credit-card').getElementsByTagName('input');
-        // console.log(fields);
-        // for (var i = 0; i < fields.length; i++) {
-        //   fields[i].attr('required', 'false');
-        // }
+        var fields = $('#form-credit-card').getElementsByTagName('input');
+        for (var i = 0; i < fields.length; i++) {
+          fields[i].prop('required', false);
+        }
         break;
       case "bank-transfer":
         $('#form-bank-transfer').show();

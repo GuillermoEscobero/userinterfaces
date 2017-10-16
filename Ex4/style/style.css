@@ -149,6 +149,10 @@ input, select {
   margin: 1em 3em;
 }
 
+#ok-buttons {
+  display: block;
+}
+
 /* ---------------------------- Footer ----------------------------- */
 
 footer {
@@ -318,8 +322,6 @@ footer a {
     #form-credit-card ul {
       display: block;
     }
-
-
 
 }
 
