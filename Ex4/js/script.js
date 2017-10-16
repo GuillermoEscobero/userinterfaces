@@ -36,7 +36,7 @@ function submitLogin() {
   var userPassword = document.getElementById('login-password').value;
   document.getElementById('login-modal').style.display =  "none";
   if (getCookie("email") != userEmail) {
-    document.cookie = "";
+    deleteAllCookies();
     setCookie("email", userEmail, 30);
     setCookie("password", userPassword, 30);
   }
