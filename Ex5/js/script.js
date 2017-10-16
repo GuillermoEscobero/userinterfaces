@@ -76,13 +76,13 @@ function onDragStartCard(ev) {
 
 function onDropCard(ev) {
   ev.preventDefault()
-
-  var origin = document.getElementById(ev.dataTransfer.getData('text'))
+  
+  var data = ev.dataTransfer.getData('text')
+  var origin = document.getElementById(data)
   var destination = document.getElementById('iframe')
-  var destSrc = getSrc(destination)
+  // TODO: swap the images/URLs and information -title, etc-
+  // TODO: add the possibility to swap the iframe with the related videos 
 
-  setSrc(destination, getSrc(origin))
-  setSrc(origin, destSrc)
 
   destination.style = "pointer-events: enable"
 }
@@ -90,18 +90,6 @@ function onDropCard(ev) {
 function allowDrop(ev) {
   ev.preventDefault()
 }
-
-function setSrc(element, URL) {
-  if (element.id === 'img-flutter') {
-    
-  }
-  element.src = URL
-}
-
-function getSrc (element) {
-  return element.src
-}
-
 
 // TODO: cookies part
 // TODO: show description when button '+' clicked
