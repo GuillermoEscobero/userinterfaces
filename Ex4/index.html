@@ -43,7 +43,7 @@
           Email<br>
           <input id="login-email" type="email" name="email" required>
           Password<br>
-          <input id="login-password" type="password" name="password" required>
+          <input id="login-password" type="password" name="password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?!.*\s).*$" required>
           <button class="btn-form" type="submit" name="submit">Submit</button>
         </form>
       </div>
