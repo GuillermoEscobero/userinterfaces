@@ -14,144 +14,145 @@
 
 <body>
 
-    <header>
-        <!--Navigation bar -->
-        <nav>
-            <!--Logo of the app -->
-            <a href="#" class="logo"><img src="images/logo.svg" alt="Lococo">
-            </a>
-            <ul>
-                <!--Create a list of links -->
-                <li><a href="#">Explore</a>
-                </li>
-                <li><a href="#">My Account</a>
-                </li>
-                <li><a href="#">Logout</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <!--Container of both personal information and billing sections -->
-        <div class="sections-container">
-            <h1>My Account details</h1>
-            <hr>
-            <!--Subsection showing the personal information -->
-            <section id="personal-information-section">
-                <!--Header with the title of the section-->
-                <header class="size-40">
-                    <h2>Personal Information</h2>
-                </header>
-                <!--Div with the information itself -->
-                <div class="size-30">
-                    <ul>
-                        <!--All fields are disabled, since it is supposed to contain previous information that may or may not be changed -->
-                        <li>First &#38; Last Name
-                            <br>
-                            <input type="text" name="fullname" value="John Doe" disabled>
-                        </li>
-                        <li>Birthdate
-                            <br>
-                            <input type="date" name="bday" value="1970-01-01" disabled>
-                        </li>
-                        <li>Email
-                            <br>
-                            <input type="email" name="email" value="johndoe@uc3m.es" disabled>
-                        </li>
-                        <li>Password
-                            <br>
-                            <input type="password" name="passw" value="1234admin" disabled>
-                        </li>
-                    </ul>
-                </div><!-- >
-          This comment is mandatory to make inline-blocks to be in the same line, without it,
-          in the tablet version both subsections would not display one after the other
-          --><div class="size-30">
-                    <!--List with the rest of the personal information -->
-                    <ul>
-                        <li>Language
-                            <br>
-                            <!--Selector for language -->
-                            <select>
-                                <option value="spa">Spanish</option>
-                                <option value="eng">English</option>
-                                <option value="fra">French</option>
-                                <option value="ger">German</option>
-                            </select>
-                        </li>
-                        <li>Path to photo
-                            <br>
-                            <input type="text" name="photo-path" value="Downloads/photo.jpg" disabled>
-                        </li>
-                        <li>Picture
-                            <br>
-                            <div class="profile-picture">
-                                <img alt="profile-photo" src="images/idphoto.png" />
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <!--Horizontal line separator -->
-            <hr>
-            <!--Subsection showing the billing information-->
-            <section id="billing-information-section">
-                <header class="size-40">
-                    <!--The class fa fa-credit-card is required to use one of the icons imported into the html from FontAwesome -->
-                    <h2>Billing Information&nbsp;<i class="fa fa-credit-card" aria-hidden="true"></i></h2>
-                </header>
-                <div class="size-60">
-                    <ul>
-                        <li>Address
-                            <br>
-                            <input type="text" name="address" disabled value="Av. de la Universidad, 30. Leganés">
-                        </li>
-                        <!--Using FontAwesome icons once again -->
-                        <li>Payment method&nbsp;<i class="fa fa-cc-visa" aria-hidden="true"></i>
-                            <br>
-                            <select id="payment-method">
-                                <option value="visa">VISA</option>
-                                <option value="mastercard">Mastercard</option>
-                                <option value="paypal">PayPal</option>
-                            </select>
-                        </li>
-                        <!--List containing the rest of the information created -->
-                        <li>
-                            <ul>
-                                <li class="size-70">Number
-                                    <br>
-                                    <input type="text" name="card-number" maxlength="16" value="1234567890123456">
-                                </li>
-                                <li class="size-15">Valid Thru
-                                    <br>
-                                    <input type="text" name="card-valid" maxlength="5" value="05/19">
-                                </li>
-                                <li class="size-15">Code
-                                    <br>
-                                    <input type="password" name="csv" maxlength="3" value="123">
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-        </div>
-    </main>
-    <!--Footer section of the web created -->
-    <footer>
+<header>
+    <!--Navigation bar -->
+    <nav>
+        <!--Logo of the app -->
+        <a href="#" class="logo"><img src="images/logo.svg" alt="Lococo">
+        </a>
         <ul>
-            <li><a href="#">Lococo 2017 ©</a>
+            <!--Create a list of links -->
+            <li><a href="#">Explore</a>
             </li>
-            <!--Vertical divider (see .divider class in the .css) -->
-            <li class="divider"></li>
-            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <li><a href="#">My Account</a>
             </li>
-            <li class="divider"></li>
-            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <li><a href="#">Logout</a>
             </li>
         </ul>
-    </footer>
+    </nav>
+</header>
+
+<main>
+    <!--Container of both personal information and billing sections -->
+    <div class="sections-container">
+        <h1>My Account details</h1>
+        <hr>
+        <!--Subsection showing the personal information -->
+        <section id="personal-information-section">
+            <!--Header with the title of the section-->
+            <header class="size-40">
+                <h2>Personal Information</h2>
+            </header>
+            <!--Div with the information itself -->
+            <div class="size-30">
+                <ul>
+                    <!--All fields are disabled, since it is supposed to contain previous information that may or may not be changed -->
+                    <li>First &#38; Last Name
+                        <br>
+                        <input type="text" name="fullname" value="John Doe" disabled>
+                    </li>
+                    <li>Birthdate
+                        <br>
+                        <input type="date" name="bday" value="1970-01-01" disabled>
+                    </li>
+                    <li>Email
+                        <br>
+                        <input type="email" name="email" value="johndoe@uc3m.es" disabled>
+                    </li>
+                    <li>Password
+                        <br>
+                        <input type="password" name="passw" value="1234admin" disabled>
+                    </li>
+                </ul>
+            </div><!-- >
+          This comment is mandatory to make inline-blocks to be in the same line, without it,
+          in the tablet version both subsections would not display one after the other
+          -->
+            <div class="size-30">
+                <!--List with the rest of the personal information -->
+                <ul>
+                    <li>Language
+                        <br>
+                        <!--Selector for language -->
+                        <select>
+                            <option value="spa">Spanish</option>
+                            <option value="eng">English</option>
+                            <option value="fra">French</option>
+                            <option value="ger">German</option>
+                        </select>
+                    </li>
+                    <li>Path to photo
+                        <br>
+                        <input type="text" name="photo-path" value="Downloads/photo.jpg" disabled>
+                    </li>
+                    <li>Picture
+                        <br>
+                        <div class="profile-picture">
+                            <img alt="profile-photo" src="images/idphoto.png"/>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--Horizontal line separator -->
+        <hr>
+        <!--Subsection showing the billing information-->
+        <section id="billing-information-section">
+            <header class="size-40">
+                <!--The class fa fa-credit-card is required to use one of the icons imported into the html from FontAwesome -->
+                <h2>Billing Information&nbsp;<i class="fa fa-credit-card" aria-hidden="true"></i></h2>
+            </header>
+            <div class="size-60">
+                <ul>
+                    <li>Address
+                        <br>
+                        <input type="text" name="address" disabled value="Av. de la Universidad, 30. Leganés">
+                    </li>
+                    <!--Using FontAwesome icons once again -->
+                    <li>Payment method&nbsp;<i class="fa fa-cc-visa" aria-hidden="true"></i>
+                        <br>
+                        <select id="payment-method">
+                            <option value="visa">VISA</option>
+                            <option value="mastercard">Mastercard</option>
+                            <option value="paypal">PayPal</option>
+                        </select>
+                    </li>
+                    <!--List containing the rest of the information created -->
+                    <li>
+                        <ul>
+                            <li class="size-70">Number
+                                <br>
+                                <input type="text" name="card-number" maxlength="16" value="1234567890123456">
+                            </li>
+                            <li class="size-15">Valid Thru
+                                <br>
+                                <input type="text" name="card-valid" maxlength="5" value="05/19">
+                            </li>
+                            <li class="size-15">Code
+                                <br>
+                                <input type="password" name="csv" maxlength="3" value="123">
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</main>
+<!--Footer section of the web created -->
+<footer>
+    <ul>
+        <li><a href="#">Lococo 2017 ©</a>
+        </li>
+        <!--Vertical divider (see .divider class in the .css) -->
+        <li class="divider"></li>
+        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </li>
+        <li class="divider"></li>
+        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        </li>
+    </ul>
+</footer>
 </body>
 
 </html>
