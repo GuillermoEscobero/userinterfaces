@@ -1,0 +1,403 @@
+/* Exercise 4 CSS file
+ * Guillermo Escobero & Raul Olmedo
+ * Group 89 */
+
+/* ------------------------ Main styles and resets ---------------------- */
+
+body {
+  margin: 0 auto;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  background: #EEEEEE;
+}
+
+h2 {
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0 auto;
+}
+
+input {
+  text-overflow: ellipsis;
+}
+
+/* ------------------------------- Header ------------------------------- */
+
+header nav {
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 70px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+/* Logo */
+
+nav a.logo {
+  display: inline-block;
+  line-height: 70px;
+  margin-left: 3%;
+}
+
+.logo img {
+  width: 75px;
+  height: 45px;
+  vertical-align: middle;
+}
+
+/* Header nav right links */
+
+header nav ul {
+  float: right;
+  line-height: 70px;
+  margin-right: 3%;
+}
+
+header nav li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+header nav li:hover {
+  background-color: #424242;
+}
+
+header nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  display: block;
+}
+
+/* -----------    Body main wrapper (margins needed to have a nav fixed
+and margin  to the footer) ------------------------------ */
+
+main {
+  margin: 6em 0 2em 0;
+  padding: 0 5%;
+}
+
+/* ------------------------ Sections container -------------------------- */
+
+.sections-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  padding: 20px 30px 10px;
+}
+
+.sections-container header h2 {
+  font-weight: 100;
+}
+
+input, select {
+  width: 100%;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  border: none;
+  border-bottom: 2px solid #424242;
+  background-color: transparent;
+  font-size: 16px;
+  outline: none;
+}
+
+/* ----- Subsections -----*/
+
+.sections-container section {
+  display: flex;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.sections-container section ul {
+  padding-left: 2em;
+}
+
+/* Profile picture style (responsive, centered) */
+
+.profile-picture {
+  padding-top: 0.5em;
+}
+
+.profile-picture img {
+  width: 60%;
+  margin: auto;
+  display: block;
+}
+
+/* Special styles for billing information section (third row with three elements) */
+
+#billing-information-section ul>li>ul {
+  display: flex;
+  padding: 0;
+}
+
+#billing-information-section ul>li>ul>li {
+  margin-right: 5%;
+}
+
+#ok-buttons input {
+  width: auto;
+  margin-right: 1em;
+}
+
+#ok-buttons button {
+  margin: 1em 3em;
+}
+
+#ok-buttons {
+  display: block;
+}
+
+/* ---------------------------- Footer ----------------------------- */
+
+footer {
+  height: 70px;
+  background-color: rgb(0, 0, 0);
+  padding-right: 3%;
+  padding-left: 3%;
+}
+
+footer ul {
+  display: inline-flex;
+  float: left;
+  line-height: 70px;
+}
+
+footer li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+footer li:hover {
+  background-color: #424242;
+}
+
+footer a {
+  color: #FFFFFF;
+  text-decoration: none;
+  display: block;
+}
+
+/* ---------------------------- Special classes ---------------------------- */
+
+/* Divider line used in footer */
+
+.divider {
+  border-left: 1px solid #FFFFFF;
+  height: 40px;
+  align-self: center;
+  padding: 0;
+}
+
+/* Elements size classes (responsive use) */
+
+.size-15 {
+  width: 15%;
+}
+
+.size-30 {
+  width: 30%;
+}
+
+.size-40 {
+  width: 40%;
+}
+
+.size-60 {
+  width: 60%;
+}
+
+.size-70 {
+  width: 70%;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For tablets: */
+    [class*="size-"] {
+        width: 50%;
+    }
+
+    .size-40 {
+      width: 100%;
+    }
+
+    .size-30 {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .sections-container section {
+      display: block;
+    }
+
+    #personal-information-section header {
+      display: block;
+    }
+
+    .sections-container header {
+      margin-bottom: 1em;
+    }
+
+    .size-60 {
+      width: 100%;
+    }
+
+    main {
+      padding: 0;
+      margin: 4em 0 0 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    /* For mobile phones: */
+    [class*="size-"] {
+        width: 100%;
+    }
+
+    /* ---------- Header ------ */
+
+    header nav {
+      position: static;
+      height: 13em;
+    }
+
+    /* Logo */
+
+    nav a.logo {
+      float: none;
+    }
+
+    /* Header nav right links */
+
+    header nav ul.unformatted {
+      margin-right: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      line-height: 40px;
+      width: 100%;
+      float: none;
+    }
+
+    header nav li {
+      display: block;
+      padding: 0 10px;
+    }
+
+    header nav a {
+      float: right;
+      clear: right;
+    }
+
+    /* -----------  Body main wrapper ------------------------------ */
+
+    main {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0;
+    }
+
+    /* ------------ Sections container -------------------------- */
+
+    .sections-container header {
+      margin-bottom: 1em;
+    }
+
+    /* ----- Subsections -----*/
+
+    .sections-container section {
+      display: block;
+    }
+
+    .sections-container section ul {
+      padding-left: 1em;
+    }
+
+    /* Special styles for billing information section
+    (third row with three elements) */
+
+    #form-credit-card ul {
+      display: block;
+    }
+
+}
+
+/* The Modal (background) */
+.modal {
+    display: block;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.modal header {
+    padding: 20px 16px;
+    background-color: black;
+    color: white;
+    margin-bottom: 1em;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+.btn-form {
+  border: 2px solid black;
+  background-color: black;
+  color: white;
+  margin: 1em 0;
+  font-size: 1em;
+}
+
+.hide {
+  display: none;
+}
+
+.well {
+  background-color: rgb(196, 196, 196);
+  padding: 10px;
+}
+
+.block {
+  display: block;
+}
+
+#form-bank-transfer {
+  margin-left: 2em;
+}
