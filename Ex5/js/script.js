@@ -82,6 +82,8 @@ function onDropCard(ev) {
   var destination = document.getElementById('iframe')
   // TODO: swap the images/URLs and information -title, etc-
   // TODO: add the possibility to swap the iframe with the related videos 
+  // Elimino el nodo de related videos
+  origin.firstChild.removeChild(this)
 
 
   destination.style = "pointer-events: enable"
