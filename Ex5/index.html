@@ -30,7 +30,8 @@
                     <a href="#">My Account</a>
                 </li>
                 <li>
-                    <a href="#"><p id="username">Login</p>
+                    <a href="#">
+                        <p id="username">Login</p>
                         <img id="user-photo" class="circle photo-id-nav" src="images/default_user.svg" alt="profile-picture">
                     </a>
                 </li>
@@ -38,9 +39,12 @@
         </nav>
     </header>
 
+    <!--
     <!-- The Modal -->
+    <!--
     <div id="login-modal" class="modal">
       <!-- Modal content -->
+    <!--
       <div class="modal-content">
         <header>
           <h2>Login</h2>
@@ -56,6 +60,7 @@
         </div>
       </div>
     </div>
+    -->
 
     <main>
         <!--Container with video-suggestions and main-player sections-->
@@ -83,7 +88,7 @@
                 </aside>
                 <div class="size-70">
                     <!--Container for the iframe -->
-                    <div class="video-player" draggable="true" ondragstart="onDragStartCard(event)" ondragover="allowDrop(event)" ondrop="onDropCard(event)">
+                    <div id="iframe-wrapper" class="video-player" draggable="true" ondragstart="onDragStartCard(event)" ondragover="allowDrop(event)" ondrop="onDropCard(event)">
                         <!--Video inserted form YouTube -->
                         <iframe id="iframe" src="https://www.youtube.com/embed/w3jLJU7DT5E" allowfullscreen></iframe>
                     </div>
