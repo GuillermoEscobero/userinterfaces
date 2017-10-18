@@ -140,6 +140,10 @@ input, select {
   margin-right: 5%;
 }
 
+#form-paypal {
+  text-align: center;
+}
+
 #ok-buttons input {
   width: auto;
   margin-right: 1em;
@@ -147,10 +151,6 @@ input, select {
 
 #ok-buttons button {
   margin: 1em 3em;
-}
-
-#ok-buttons {
-  display: block;
 }
 
 /* ---------------------------- Footer ----------------------------- */
