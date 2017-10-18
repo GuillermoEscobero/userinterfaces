@@ -64,6 +64,7 @@ function submitChanges() {
     }
   }
   alert("Fields modified:\n" + changes);
+  loadCookiesData();
 }
 
 function toggleRequiredCreditCard(boolean) {
