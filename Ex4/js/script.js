@@ -42,13 +42,15 @@ function submitLogin() {
   }
   loadCookiesData();
   changePaymentMethod();
-  return false;
 }
 
 function loadCookiesData() {
   var formFields = document.getElementsByClassName('sections-container')[0].querySelectorAll('input, select');
   for (var i = 0; i < formFields.length; i++) {
     formFields[i].value = getCookie(formFields[i].name);
+    if (formFields[i].name === "photo-path" && getCookie("photo-path") !== "") {
+      $('#profile-photo').attr('src', getCookie("photo-path"));
+    }
   }
 }
 
