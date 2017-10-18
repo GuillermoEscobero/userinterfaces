@@ -1,31 +1,15 @@
+
+
 /* Part 1 */
 
-function onLoginSubmit () {
-  // Obtain the user and password entered in the modal popup
-  var userEmail = document.getElementById('login-email').value
-  var userPassword = document.getElementById('login-password').value
-
-  // Hide modal
-  document.getElementById('login-modal').style.display = 'none'
-
-  // Check if it's the first time the user logs in
-  if (getCookie('email') !== userEmail) {
-    // Create a new cookie with the information of the user
-    setCookie('email', userEmail, 30)
-    setCookie('password', userPassword, 30)
-  } else {
-    loadDataOnCookie()
-  }
+function setCookie(cookieName, cookieValue, expDays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (expDays*24*60*60*1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cookieName + "=" + cookieValue + ";" + expires;
 }
 
-function setCookie (cookieName, cookieValue, expDays) {
-  var d = new Date()
-  d.setTime(d.getTime() + (expDays * 24 * 60 * 60 * 1000))
-  var expires = 'expires=' + d.toGMTString()
-  document.cookie = cookieName + '=' + cookieValue + ';' + expires + ';path=/'
-}
-
-function getCookie (cookieName) {
+function getCookie(cookieName) {
   var name = cookieName + '='
   var decodedCookie = decodeURIComponent(document.cookie)
   var ca = decodedCookie.split(';')
@@ -41,13 +25,28 @@ function getCookie (cookieName) {
   return ''
 }
 
-function loadDataOnCookie () {
-  // TODO: load the name and the profile picture
+function submitLogin() {
+  var userEmail = document.getElementById('login-email').value;
+  
+  if (getCookie("email") == userEmail) {
+    loadCookiesData();
+    document.getElementById('login-modal').style.display = "none";
+  } else {
+    window.location = "Ex4/index.html";
+  }
 }
+
+function loadCookiesData() {
+  $('#username').text(getCookie('username'));
+  if (getCookie('photo-path') !== "" && getCookie('photo-path') != null) {
+    $('#user-photo').attr('src', getCookie('photo-path'));
+  }
+}
+
 
 /* Part 2 */
 
-function onIconClick (buttonId) {
+function onIconClick(buttonId) {
   // TODO: check if it works in other web browsers -apart from firefox-
   var textNode = document.getElementById(buttonId).lastChild
 
@@ -58,44 +57,37 @@ function onIconClick (buttonId) {
   }
 }
 
-function addOne (textToIncrement) {
+function addOne(textToIncrement) {
   var number = parseInt(textToIncrement)
   return number + 1
 }
 
+
 /* Part 3 */
 
-function onDragStartCard (ev) {
-  document.getElementById('iframe').style = 'pointer-events: none'
-  // TODO: Podre pasar el nodo completo?
-  // Poner el id del iframe container y a tomar por culo
+function onDragStartCard(ev) {
+  document.getElementById('iframe').style = "pointer-events: none"
   ev.dataTransfer.setData('text/plain', ev.target.id)
 }
 
-function onDropCard (ev) {
+function onDropCard(ev) {
   ev.preventDefault()
-  //TODO: rewrite this part in order to clarify the code
-  var data = ev.dataTransfer.getData('text')
-  var nodeToInsert = document.getElementById(data)
-  var nodeToRemove = document.getElementById('iframe-wrapper')
-
-  // Append nodeToInsert to nodeToRemove father
-  nodeToInsert.parentNode.appendChild(document.getElementById('iframe'))
-
-  // Append nodeToInsertCopy to nodeToRemove
-  nodeToRemove.appendChild(nodeToInsert)
-
-  //Set the class "video-player" to the element that is on the related videos
-  document.getElementById('iframe').parentElement.setAttribute('class','video-player video-suggested-img-wrapper')
-
   
+  var data = ev.dataTransfer.getData('text')
+  var origin = document.getElementById(data)
+  var destination = document.getElementById('iframe')
+  // TODO: swap the images/URLs and information -title, etc-
+  // TODO: add the possibility to swap the iframe with the related videos 
+  // Elimino el nodo de related videos
+  origin.firstChild.removeChild(this)
 
 
-  nodeToRemove.style = 'pointer-events: enable'
+  destination.style = "pointer-events: enable"
 }
 
-function allowDrop (ev) {
+function allowDrop(ev) {
   ev.preventDefault()
 }
 
+// TODO: cookies part
 // TODO: show description when button '+' clicked
