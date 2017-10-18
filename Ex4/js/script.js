@@ -2,7 +2,7 @@ function setCookie(cookieName, cookieValue, expDays) {
   var d = new Date();
   d.setTime(d.getTime() + (expDays*24*60*60*1000));
   var expires = "expires=" + d.toGMTString();
-  document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
+  document.cookie = cookieName + "=" + cookieValue + ";" + expires;
 }
 
 function getCookie(cookieName) {
@@ -21,11 +21,22 @@ function getCookie(cookieName) {
   return "";
 }
 
+function deleteAllCookies() {
+    var cookies = document.cookie.split(";");
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+}
+
 function submitLogin() {
   var userEmail = document.getElementById('login-email').value;
   var userPassword = document.getElementById('login-password').value;
   document.getElementById('login-modal').style.display =  "none";
   if (getCookie("email") != userEmail) {
+    deleteAllCookies();
     setCookie("email", userEmail, 30);
     setCookie("password", userPassword, 30);
   }
@@ -37,6 +48,9 @@ function loadCookiesData() {
   var formFields = document.getElementsByClassName('sections-container')[0].querySelectorAll('input, select');
   for (var i = 0; i < formFields.length; i++) {
     formFields[i].value = getCookie(formFields[i].name);
+    if (formFields[i].name === "photo-path" && getCookie("photo-path") !== "") {
+      $('#profile-photo').attr('src', getCookie("photo-path"));
+    }
   }
 }
 
@@ -45,11 +59,19 @@ function submitChanges() {
   var changes = "";
   for (var i = 0; i < formFields.length; i++) {
     if (getCookie(formFields[i].name) != formFields[i].value) {
-      changes += "- " + formFields[i].name + "\n";
+      changes += "- " + formFields[i].name.capitalize() + "\n";
       setCookie(formFields[i].name, formFields[i].value, 30);
     }
   }
   alert("Fields modified:\n" + changes);
+  loadCookiesData();
+}
+
+function toggleRequiredCreditCard(boolean) {
+  var fields = document.getElementById('form-credit-card').getElementsByTagName('input');
+  for (var i = 0; i < fields.length; i++) {
+    fields[i].required = boolean;
+  }
 }
 
 function changePaymentMethod() {
@@ -63,20 +85,22 @@ function changePaymentMethod() {
       case "credit-card":
         $('#form-credit-card').show();
         $('#payment-icon').addClass("fa-credit-card-alt");
+        toggleRequiredCreditCard(true);
         break;
       case "paypal":
         $('#form-paypal').show();
         $('#payment-icon').addClass("fa-cc-paypal");
-        // var fields = $('#form-credit-card').getElementsByTagName('input');
-        // console.log(fields);
-        // for (var i = 0; i < fields.length; i++) {
-        //   fields[i].attr('required', 'false');
-        // }
+        toggleRequiredCreditCard(false);
         break;
       case "bank-transfer":
         $('#form-bank-transfer').show();
         $('#payment-icon').addClass("fa-bank");
+        toggleRequiredCreditCard(false);
         break;
       default:
     }
   }
+
+String.prototype.capitalize = function() {
+  return this.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+};
