@@ -42,6 +42,7 @@ function submitLogin() {
   }
   loadCookiesData();
   changePaymentMethod();
+  return false;
 }
 
 function loadCookiesData() {

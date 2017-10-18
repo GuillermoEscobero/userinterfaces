@@ -96,7 +96,7 @@
             </li>
             <li>Birthdate
               <br>
-              <input type="date" name="birthday" pattern="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d" required>
+              <input type="text" name="birthday" maxlength="10" placeholder="mm/dd/yyyy" pattern="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d" required>
             </li>
           </ul>
         </div><!-- >
@@ -110,7 +110,7 @@
               <!--Selector for language -->
               <select name="language">
                 <option value="spa">Spanish</option>
-                <option value="eng">English</option>
+                <option value="eng" selected>English</option>
                 <option value="fra">French</option>
                 <option value="ger">German</option>
               </select>
@@ -146,7 +146,8 @@
             <li>Payment method&nbsp;<i id="payment-icon" class="fa fa-credit-card-alt" aria-hidden="true"></i>
               <br>
               <select id="payment-method" name="payment-method" onchange="changePaymentMethod()" required>
-                  <option value="credit-card">Credit card</option>
+                  <option value="">Choose</option>
+                  <option value="credit-card" selected>Credit card</option>
                   <option value="paypal">Paypal</option>
                   <option value="bank-transfer">Bank transfer</option>
               </select>
@@ -160,7 +161,7 @@
                 </li>
                 <li class="size-15">Valid Thru
                   <br>
-                  <input type="text" name="card-valid" maxlength="5" required>
+                  <input type="text" name="card-valid" maxlength="5" placeholder="mm/yy" required>
                 </li>
                 <li class="size-15">Code
                   <br>
@@ -175,16 +176,16 @@
               <p>DINEROSBANK, S.A.</p>
             </div>
             <div id="form-paypal" class="hide">
-              <!-- PayPal Logo --><table border="0" cellpadding="10" cellspacing="0" align="center"><tr><td align="center"></td></tr><tr><td align="center"><a href="https://www.paypal.com/uk/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/uk/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_now_accepting_pp_2line_w.png" border="0" alt="Now accepting PayPal"></a> </td></tr></table><!-- PayPal Logo -->
+              <a href="https://www.paypal.com/uk/webapps/mpp/paypal-popup" title="PayPal" onclick="javascript:window.open('https://www.paypal.com/uk/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_now_accepting_pp_2line_w.png" alt="Now accepting PayPal"></a>
             </div>
         </div>
       </section>
       <hr>
-      <section id="ok-buttons" class="block">
+      <div id="ok-buttons">
           <input type="checkbox" name="conditions" value="ok-conditions" required>I have read and agree to terms of use, privacy policy and use of cookies.<br>
           <button class="btn-form" type="submit" name="submit">Save</button>
           <button class="btn-form" type="button" onclick="loadCookiesData()" name="cancel">Cancel</button>
-      </section>
+      </div>
       </form>
     </div>
   </main>
