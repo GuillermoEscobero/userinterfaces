@@ -83,7 +83,7 @@
                 </aside>
                 <div class="size-70">
                     <!--Container for the iframe -->
-                    <div class="video-player" draggable="true" ondragstart="onDragStartCard(event)" ondragover="allowDrop(event)" ondrop="onDropCard(event)">
+                    <div class="video-player">
                         <!--Video inserted form YouTube -->
                         <iframe id="iframe" src="https://www.youtube.com/embed/w3jLJU7DT5E" allowfullscreen></iframe>
                     </div>
@@ -97,7 +97,7 @@
                 <!--Main container with the three suggestion cards -->
                 <div class="suggestions">
                     <!--Card 1 -->
-                    <div class="size-33 video-suggested-card" draggable="true" ondragstart="onDragStartCard(event)">
+                    <div class="size-33 video-suggested-card">
                         <!--Section with the photo of the video -->
                         <div class="video-suggested-img-wrapper">
                             <img id="img-flutter" src="images/hqdefault.jpg" alt="Flutter SDK">
@@ -108,7 +108,7 @@
                         </h2>
                     </div>
                     <!--Card 2 -->
-                    <div class="size-33 video-suggested-card" draggable="true" ondragstart="onDragStartCard(event)">
+                    <div class="size-33 video-suggested-card">
                         <div class="video-suggested-img-wrapper">
                             <img id="img-kotlin" src="images/hqdefault-2.jpg" alt="Kotlin in Android">
                         </div>
@@ -117,7 +117,7 @@
                         </h2>
                     </div>
                     <!--Card 3 -->
-                    <div class="size-33 video-suggested-card" draggable="true" ondragstart="onDragStartCard(event)">
+                    <div class="size-33 video-suggested-card">
                         <div class="video-suggested-img-wrapper">
                             <img id="img-material" src="images/hqdefault-3.jpg" alt="Material Design">
                         </div>
@@ -151,6 +151,8 @@
         </ul>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/script.js"></script>
 </body>
 
