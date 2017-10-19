@@ -74,16 +74,16 @@ function onDragStartCard(ev) {
 function onDropCard(ev) {
   ev.preventDefault()
 
-  var data = ev.dataTransfer.getData('text')
-  var origin = document.getElementById(data)
-  var destination = document.getElementById('iframe')
+  var data = ev.dataTransfer.getData('text') //related video id
+  var nodeToInsert = document.getElementById(data) //node of the related video
+  var nodeToRemove = ev.target.firstElementChild //node of the iframe
+
   // TODO: swap the images/URLs and information -title, etc-
   // TODO: add the possibility to swap the iframe with the related videos 
-  // Elimino el nodo de related videos
-  origin.firstChild.removeChild(this)
+  var nodeToInsertCopy = nodeToInsert
 
-  nodeToRemove = convertToImg(nodeToRemove.src)
-  nodeToInsert = convertToVideo(nodeToInsert.src)
+  nodeToInsert.src = convertToImg(nodeToRemove)
+  nodeToRemove.src = convertToVideo(nodeToInsertCopy)
   swapIds(nodeToRemove, nodeToInsert)
 
 }
@@ -93,23 +93,23 @@ function allowDrop(ev) {
 }
 
 function convertToImg(node) {
-  if (node.src === 'https://www.youtube.com/embed/RLyw-_MLLTo') {
-    return 'images/hqdefault.jpg'
-  } else if (node.src === 'https://www.youtube.com/embed/YbF8Q8LxAJs') {
-    return 'images/hqdefault-2.jpg'
-  } else if (node.src === 'https://www.youtube.com/embed/Q8TXgCzxEnw') {
-    return 'images/hqdefault-3.jpg'
+  if (node.src == 'https://www.youtube.com/embed/RLyw-_MLLTo') {
+    return '/images/hqdefault.jpg'
+  } else if (node.src == 'https://www.youtube.com/embed/YbF8Q8LxAJs') {
+    return '/images/hqdefault-2.jpg'
+  } else if (node.src == 'https://www.youtube.com/embed/Q8TXgCzxEnw') {
+    return '/images/hqdefault-3.jpg'
   } else {
-    return 'images/idphoto.png'
+    return '/images/idphoto.png'
   }
 }
 
 function convertToVideo(node) {
-  if (node.src === 'images/hqdefault.jpg') {
+  if (node.src == 'images/hqdefault.jpg') {
     return 'https://www.youtube.com/embed/RLyw-_MLLTo'
-  } else if (node.src === 'images/hqdefault-2.jpg') {
+  } else if (node.src == 'images/hqdefault-2.jpg') {
     return 'https://www.youtube.com/embed/YbF8Q8LxAJs'
-  } else if (node.src === 'images/hqdefault-3.jpg') {
+  } else if (node.src == 'images/hqdefault-3.jpg') {
     return 'https://www.youtube.com/embed/Q8TXgCzxEnw'
   } else {
     return 'https://www.youtube.com/embed/w3jLJU7DT5E'
@@ -117,11 +117,8 @@ function convertToVideo(node) {
 }
 
   function swapIds(nodeA, nodeB) {
-
-  }
-
-  function swapDescription(nodeA, nodeB) {
-
+    nodeA.setAttribute("id", nodeB.id)
+    nodeB.setAttribute("id", nodeA.id) //javascript pasa por referencia
   }
 
   function deactivateIframePointerEvents() {
@@ -131,5 +128,5 @@ function convertToVideo(node) {
 /* Part 4 */
 
 function openVideoInfo(ev){
-  ev.
+  ev
 }
