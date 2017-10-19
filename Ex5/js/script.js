@@ -146,3 +146,7 @@ function swapSrc(video, image) {
 }
 
 /* Part 4 */
+
+function openVideoInfo(event) {
+  event.target.offsetParent.lastElementChild.style.display = "block"
+}
