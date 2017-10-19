@@ -74,7 +74,6 @@ $(function () {
 
   $(".video-player").droppable({
     drop: function (event, ui) {
-      console.log(" " + event.target.firstElementChild.src + "\n" + ui.draggable.context.firstElementChild.firstElementChild.src);
       swapSrc(event.target.firstElementChild, ui.draggable.context.firstElementChild.firstElementChild)
     }
   });
@@ -94,6 +93,7 @@ function swapSrc(video, image) {
     case flutterVid:
       if (image.id === "img-kotlin") {
         video.src = kotlinVid
+        video.parentNode
       } else if (image.id === "img-github") {
         video.src = githubVid
       } else {
@@ -141,6 +141,8 @@ function swapSrc(video, image) {
     default:
       console.log("Error with img/vid swap!")
   }
+  // TODO: look for a better way of swapping videos/images without ifs
+  // TODO: Change the information too (Maybe using nodes?) 
 }
-// TODO: Change the information too
+
 /* Part 4 */
