@@ -4,7 +4,7 @@
 
 function setCookie(cookieName, cookieValue, expDays) {
   var d = new Date();
-  d.setTime(d.getTime() + (expDays*24*60*60*1000));
+  d.setTime(d.getTime() + (expDays * 24 * 60 * 60 * 1000));
   var expires = "expires=" + d.toGMTString();
   document.cookie = cookieName + "=" + cookieValue + ";" + expires;
 }
@@ -27,7 +27,7 @@ function getCookie(cookieName) {
 
 function submitLogin() {
   var userEmail = document.getElementById('login-email').value;
-  
+
   if (getCookie("email") == userEmail) {
     loadCookiesData();
     document.getElementById('login-modal').style.display = "none";
@@ -64,69 +64,83 @@ function addOne(textToIncrement) {
 
 
 /* Part 3 */
+// Hacer dragable video-player
+$(function () {
+  $(".video-suggested-card").draggable({
+    revert: true,
+    iframeFix: true,
+    cursor: "crosshair"
+  });
 
-function onDragStartCard(ev) {
-  ev.dataTransfer.setData('text/plain', ev.target.id)
-  // FIXME: temporal call to the function, it is supposed to be in the onload part
-  deactivateIframePointerEvents()
-}
+  $(".video-player").droppable({
+    drop: function (event, ui) {
+      console.log(" " + event.target.firstElementChild.src + "\n" + ui.draggable.context.firstElementChild.firstElementChild.src);
+      swapSrc(event.target.firstElementChild, ui.draggable.context.firstElementChild.firstElementChild)
+    }
+  });
+});
 
-function onDropCard(ev) {
-  ev.preventDefault()
+function swapSrc(video, image) {
+  var flutterVid = 'https://www.youtube.com/embed/RLyw-_MLLTo'
+  var kotlinVid = 'https://www.youtube.com/embed/YbF8Q8LxAJs'
+  var materialVid = 'https://www.youtube.com/embed/Q8TXgCzxEnw'
+  var githubVid = 'https://www.youtube.com/embed/w3jLJU7DT5E'
+  var flutterImg = "images/hqdefault.jpg"
+  var kotlinImg = "images/hqdefault-2.jpg"
+  var materialImg = "images/hqdefault-3.jpg"
+  var githubImg = "images/hqdefault-4.jpg"
 
-  var data = ev.dataTransfer.getData('text') //related video id
-  var nodeToInsert = document.getElementById(data) //node of the related video
-  var nodeToRemove = ev.target.firstElementChild //node of the iframe
+  switch (video.src) {
+    case flutterVid:
+      if (image.id === "img-kotlin") {
+        video.src = kotlinVid
+      } else if (image.id === "img-github") {
+        video.src = githubVid
+      } else {
+        video.src = materialVid
+      }
+      image.src = flutterImg
+      image.id = "img-flutter"
 
-  // TODO: swap the images/URLs and information -title, etc-
-  // TODO: add the possibility to swap the iframe with the related videos 
-  var nodeToInsertCopy = nodeToInsert
+      break;
+    case kotlinVid:
+      if (image.id === "img-material") {
+        video.src = materialVid
+      } else if (image.id === "img-github") {
+        video.src = githubVid
+      } else {
+        video.src = flutterVid
+      }
+      image.src = kotlinImg
+      image.id = "img-kotlin"
 
-  nodeToInsert.src = convertToImg(nodeToRemove)
-  nodeToRemove.src = convertToVideo(nodeToInsertCopy)
-  swapIds(nodeToRemove, nodeToInsert)
+      break;
+    case materialVid:
+      if (image.id === "img-github") {
+        video.src = githubVid
+      } else if (image.id === "img-flutter") {
+        video.src = flutterVid
+      } else {
+        video.src = kotlinVid
+      }
+      image.src = materialImg
+      image.id = "img-material"
+      break;
+    case githubVid:
+      if (image.id === "img-flutter") {
+        video.src = flutterVid
+      } else if (image.id === "img-material") {
+        video.src = materialVid
+      } else {
+        video.src = kotlinVid
+      }
+      image.src = githubImg
+      image.id = "img-github"
+      break;
 
-}
-
-function allowDrop(ev) {
-  ev.preventDefault()
-}
-
-function convertToImg(node) {
-  if (node.src == 'https://www.youtube.com/embed/RLyw-_MLLTo') {
-    return '/images/hqdefault.jpg'
-  } else if (node.src == 'https://www.youtube.com/embed/YbF8Q8LxAJs') {
-    return '/images/hqdefault-2.jpg'
-  } else if (node.src == 'https://www.youtube.com/embed/Q8TXgCzxEnw') {
-    return '/images/hqdefault-3.jpg'
-  } else {
-    return '/images/idphoto.png'
+    default:
+      console.log("Error with img/vid swap!")
   }
 }
-
-function convertToVideo(node) {
-  if (node.src == 'images/hqdefault.jpg') {
-    return 'https://www.youtube.com/embed/RLyw-_MLLTo'
-  } else if (node.src == 'images/hqdefault-2.jpg') {
-    return 'https://www.youtube.com/embed/YbF8Q8LxAJs'
-  } else if (node.src == 'images/hqdefault-3.jpg') {
-    return 'https://www.youtube.com/embed/Q8TXgCzxEnw'
-  } else {
-    return 'https://www.youtube.com/embed/w3jLJU7DT5E'
-  }
-}
-
-  function swapIds(nodeA, nodeB) {
-    nodeA.setAttribute("id", nodeB.id)
-    nodeB.setAttribute("id", nodeA.id) //javascript pasa por referencia
-  }
-
-  function deactivateIframePointerEvents() {
-    document.getElementById('iframe').style = 'pointer-events: none'
-  }
-
+// TODO: Change the information too
 /* Part 4 */
-
-function openVideoInfo(ev){
-  ev
-}
