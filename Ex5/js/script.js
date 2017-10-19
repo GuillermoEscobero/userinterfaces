@@ -66,13 +66,14 @@ function addOne(textToIncrement) {
 /* Part 3 */
 
 function onDragStartCard(ev) {
-  document.getElementById('iframe').style = "pointer-events: none"
   ev.dataTransfer.setData('text/plain', ev.target.id)
+  // FIXME: temporal call to the function, it is supposed to be in the onload part
+  deactivateIframePointerEvents()
 }
 
 function onDropCard(ev) {
   ev.preventDefault()
-  
+
   var data = ev.dataTransfer.getData('text')
   var origin = document.getElementById(data)
   var destination = document.getElementById('iframe')
@@ -81,13 +82,50 @@ function onDropCard(ev) {
   // Elimino el nodo de related videos
   origin.firstChild.removeChild(this)
 
+  nodeToRemove = convertToImg(nodeToRemove.src)
+  nodeToInsert = convertToVideo(nodeToInsert.src)
+  swapIds(nodeToRemove, nodeToInsert)
 
-  destination.style = "pointer-events: enable"
 }
 
 function allowDrop(ev) {
   ev.preventDefault()
 }
 
-// TODO: cookies part
+function convertToImg(node) {
+  if (node.src === 'https://www.youtube.com/embed/RLyw-_MLLTo') {
+    return 'images/hqdefault.jpg'
+  } else if (node.src === 'https://www.youtube.com/embed/YbF8Q8LxAJs') {
+    return 'images/hqdefault-2.jpg'
+  } else if (node.src === 'https://www.youtube.com/embed/Q8TXgCzxEnw') {
+    return 'images/hqdefault-3.jpg'
+  } else {
+    return 'images/idphoto.png'
+  }
+}
+
+function convertToVideo(node) {
+  if (node.src === 'images/hqdefault.jpg') {
+    return 'https://www.youtube.com/embed/RLyw-_MLLTo'
+  } else if (node.src === 'images/hqdefault-2.jpg') {
+    return 'https://www.youtube.com/embed/YbF8Q8LxAJs'
+  } else if (node.src === 'images/hqdefault-3.jpg') {
+    return 'https://www.youtube.com/embed/Q8TXgCzxEnw'
+  } else {
+    return 'https://www.youtube.com/embed/w3jLJU7DT5E'
+  }
+}
+
+  function swapIds(nodeA, nodeB) {
+
+  }
+
+  function swapDescription(nodeA, nodeB) {
+
+  }
+
+  function deactivateIframePointerEvents() {
+    document.getElementById('iframe').style = 'pointer-events: none'
+  }
+
 // TODO: show description when button '+' clicked
