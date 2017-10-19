@@ -128,4 +128,8 @@ function convertToVideo(node) {
     document.getElementById('iframe').style = 'pointer-events: none'
   }
 
-// TODO: show description when button '+' clicked
+/* Part 4 */
+
+function openVideoInfo(ev){
+  ev.
+}
