@@ -157,15 +157,15 @@
               <ul>
                 <li class="size-70">Number
                   <br>
-                  <input type="text" name="card-number" maxlength="16" required>
+                  <input type="text" name="card-number" maxlength="16" pattern=".{16,}" required>
                 </li>
                 <li class="size-15">Valid Thru
                   <br>
-                  <input type="text" name="card-valid" maxlength="5" placeholder="mm/yy" required>
+                  <input type="text" name="card-valid" maxlength="5" pattern=".{5,}" placeholder="mm/yy" required>
                 </li>
                 <li class="size-15">Code
                   <br>
-                  <input type="password" name="card-csv" maxlength="3" required>
+                  <input type="password" name="card-csv" maxlength="3" pattern=".{3,}" required>
                 </li>
               </ul>
             </li>
