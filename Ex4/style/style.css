@@ -1,5 +1,5 @@
-/* Exercise 4 CSS file
- * Guillermo Escobero & Raul Olmedo
+/* Exercise 1 CSS file
+ * Guillermo Escobero, Raul Olmedo
  * Group 89 */
 
 /* ------------------------ Main styles and resets ---------------------- */
@@ -386,7 +386,6 @@ footer a {
 }
 
 .btn-form:hover {
-  border: 2px solid black;
   background-color: white;
   color: black;
 }
