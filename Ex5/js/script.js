@@ -163,7 +163,6 @@ function swapInfo(droppableElement, draggableElement) {
 /* Part 4 */
 
 function openVideoInfo(event) {
-  //FIXME: the other cards also expand the paragraph section
   //FIXME: with the description opened you cannot drop the card into the iframe
   if (event.target.getAttribute("class") === "fa fa-minus-square-o") {
     event.target.offsetParent.children[2].style.display = "none"
