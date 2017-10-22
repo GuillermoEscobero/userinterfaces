@@ -160,6 +160,7 @@ main {
 
 .suggestions {
   display: flex;
+  align-items: flex-start;
 }
 
 .video-suggested-card {
