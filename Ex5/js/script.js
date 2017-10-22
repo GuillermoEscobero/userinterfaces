@@ -151,26 +151,20 @@ function swapInfo(droppableElement, draggableElement) {
   var mainText = droppableElement.children[1].lastElementChild.innerText //Description section
   var mainShares = droppableElement.children[1].lastElementChild.previousElementSibling.innerText //Shares section
 
-  droppableElement.children[0].innerText = draggableElement.children[1].innerText//Title
-  //FIXME: lo mismo que abajo pero con los likes
-  
-  droppableElement.children[1].firstElementChild.innerText = draggableElement.children[3].innerText //Fav section 
-  //FIXME: te pasas/quedas corto con el hijo/padre y no metes el <p> en el main
-  droppableElement.children[1].lastElementChild.innerText = draggableElement.children[2].innerText//Description section
-  droppableElement.children[1].lastElementChild.previousElementSibling.innerText = draggableElement.children[4].innerText//Shares section
+  droppableElement.children[0].innerText = draggableElement.children[1].innerText //Title  
+  droppableElement.children[1].firstElementChild.childNodes[2].textContent = draggableElement.children[3].innerText //Fav section 
+  droppableElement.children[1].lastElementChild.firstElementChild.innerText = draggableElement.children[2].innerText//Description section
+  droppableElement.children[1].lastElementChild.previousElementSibling.childNodes[2].textContent = draggableElement.children[4].innerText //Shares section
   
   draggableElement.children[1].innerText = mainTitle
   draggableElement.children[2].innerText = mainText
   draggableElement.children[3].innerText = mainFav
   draggableElement.children[4].innerText = mainShares
-
-  //draggableElement.children[3].innerText //unimplemented likes/shares
-
-
 }
 
 /* Part 4 */
 //TODO:
 function openVideoInfo(event) {
+  //FIXME: the route has changed
   event.target.offsetParent.lastElementChild.style.display = "block"
 }
