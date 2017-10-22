@@ -154,7 +154,7 @@ function swapInfo(droppableElement, draggableElement) {
   droppableElement.children[1].lastElementChild.firstElementChild.innerText = draggableElement.children[2].innerText//Description section
   droppableElement.children[1].lastElementChild.previousElementSibling.childNodes[2].textContent = draggableElement.children[4].innerText //Shares section
   
-  draggableElement.children[1].firstChild.innerText = mainTitle
+  draggableElement.children[1].firstChild.data = mainTitle
   draggableElement.children[2].innerText = mainText
   draggableElement.children[3].innerText = mainFav
   draggableElement.children[4].innerText = mainShares
