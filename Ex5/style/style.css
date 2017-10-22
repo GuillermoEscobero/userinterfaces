@@ -338,6 +338,7 @@ input, select {
 .hide {
   display: none;
 }
+
 .video-suggested-card p {
   margin: 0;
   padding: 1em .5em;

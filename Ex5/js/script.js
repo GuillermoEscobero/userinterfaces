@@ -47,7 +47,6 @@ function loadCookiesData() {
 /* Part 2 */
 
 function onIconClick(buttonId) {
-  // TODO: check if it works in other web browsers -apart from firefox-
   var textNode = document.getElementById(buttonId).lastChild
 
   if (textNode.previousSibling.className === 'fa fa-heart-o') {
@@ -75,6 +74,9 @@ $(function () {
   $(".video-player").droppable({
     drop: function (event, ui) {
       swapSrc(event.target.firstElementChild, ui.draggable.context.firstElementChild.firstElementChild)
+      // Con draggable.context tenemos el div con el img y la description
+      // Con event.target.parentElement.parentElement tenemos la descripcion, el titulo y el iframe
+      swapInfo(event.target.parentElement.previousElementSibling, ui.draggable.context)
     }
   });
 });
@@ -141,12 +143,34 @@ function swapSrc(video, image) {
     default:
       console.log("Error with img/vid swap!")
   }
-  // TODO: look for a better way of swapping videos/images without ifs
-  // TODO: Change the information too (Maybe using nodes?) 
+}
+
+function swapInfo(droppableElement, draggableElement) {
+  var mainTitle = droppableElement.children[0].innerText //Title of the iframe section
+  var mainFav = droppableElement.children[1].firstElementChild.innerText //Fav section 
+  var mainText = droppableElement.children[1].lastElementChild.innerText //Description section
+  var mainShares = droppableElement.children[1].lastElementChild.previousElementSibling.innerText //Shares section
+
+  droppableElement.children[0].innerText = draggableElement.children[1].innerText//Title
+  //FIXME: lo mismo que abajo pero con los likes
+  
+  droppableElement.children[1].firstElementChild.innerText = draggableElement.children[3].innerText //Fav section 
+  //FIXME: te pasas/quedas corto con el hijo/padre y no metes el <p> en el main
+  droppableElement.children[1].lastElementChild.innerText = draggableElement.children[2].innerText//Description section
+  droppableElement.children[1].lastElementChild.previousElementSibling.innerText = draggableElement.children[4].innerText//Shares section
+  
+  draggableElement.children[1].innerText = mainTitle
+  draggableElement.children[2].innerText = mainText
+  draggableElement.children[3].innerText = mainFav
+  draggableElement.children[4].innerText = mainShares
+
+  //draggableElement.children[3].innerText //unimplemented likes/shares
+
+
 }
 
 /* Part 4 */
-
+//TODO:
 function openVideoInfo(event) {
   event.target.offsetParent.lastElementChild.style.display = "block"
 }
