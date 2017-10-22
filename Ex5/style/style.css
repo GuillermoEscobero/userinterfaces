@@ -1,0 +1,347 @@
+/* Exercise 5 CSS file
+ * Guillermo Escobero & Raul Olmedo
+ * Group 89 */
+
+/* ------------------------ Main styles and resets ---------------------- */
+
+body {
+  margin: 0 auto;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  background: #EEEEEE;
+}
+
+h2 {
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0 auto;
+}
+
+/* ------------------------------- Header ------------------------------- */
+
+header nav {
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 70px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+/* Logo */
+
+nav a.logo {
+  display: inline-block;
+  line-height: 70px;
+  margin-left: 3%;
+}
+
+.logo img {
+  width: 75px;
+  height: 45px;
+  vertical-align: middle;
+}
+
+/* Header nav right links */
+
+header nav ul {
+  float: right;
+  line-height: 70px;
+  margin-right: 3%;
+}
+
+header nav li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+header nav li:hover {
+  background-color: #424242;
+}
+
+header nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  display: block;
+}
+
+header nav p {
+  display: inline;
+}
+
+.circle {
+  border-radius: 50%;
+  height: 2em;
+}
+
+.photo-id-nav {
+  background-color: #FFF;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+/* -----------    Body main wrapper (margins needed to have a nav fixed
+and margin  to the footer) ------------------------------ */
+
+main {
+  margin: 6em 0 2em 0;
+  padding: 0 5%;
+}
+
+/* ------------------------ Sections container -------------------------- */
+
+.sections-container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.sections-container h2 {
+  font-weight: 100;
+  padding-bottom: 10px;
+}
+
+/* ----- Subsections ----- */
+
+.sections-container section {
+  display: flex;
+  margin-bottom: 3em;
+}
+
+/* ----------------- Video player section ------------ */
+
+/* Video player information */
+
+#video-player-section aside {
+  margin-right: 2em;
+}
+
+#video-player-section li {
+  padding: 10px 0px;
+  text-align: justify;
+  font-size: 20px;
+  color: #bdbdbd;
+}
+
+#video-player-section p {
+  font-size: 15px;
+  color: black;
+}
+
+/* Video player iframe (responsive) */
+
+.video-player {
+  position: relative;
+  padding-bottom: 52.6%; /* 16:9 format */
+  padding-top: 25px;
+  height: 0;
+}
+
+.video-player iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+}
+
+/* ----------------- Related videos section ------------ */
+
+#video-suggestions-section {
+  display: block;
+}
+
+#video-suggestions-section header {
+  margin-bottom: 15px;
+}
+
+.suggestions {
+  display: flex;
+  align-items: flex-start;
+}
+
+.video-suggested-card {
+  background-color: #FFFFFF;
+  margin: .5em .5em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 2px;
+}
+
+.video-suggested-img-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 format (responsive) */
+  background-color: inherit;
+}
+
+.video-suggested-card img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.video-suggested-card h2 {
+  font-size: 16px;
+  font-weight: 100;
+  padding: 1em .5em;
+  margin: 0;
+  background-color: #FFFFFF;
+}
+
+.video-suggested-card i {
+  font-size: 1.5em;
+  line-height: 16px;
+  float: right;
+}
+
+/* ---------------------------- Footer ----------------------------- */
+
+footer {
+  height: 70px;
+  background-color: rgb(0, 0, 0);
+  padding-right: 3%;
+  padding-left: 3%;
+}
+
+footer ul {
+  display: inline-flex;
+  float: left;
+  line-height: 70px;
+}
+
+footer ul li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+footer li:hover {
+  background-color: #424242;
+}
+
+footer a {
+  color: #FFFFFF;
+  text-decoration: none;
+  display: block;
+}
+
+/* ---------------------------- Special classes ---------------------------- */
+
+/* Divider line used in footer */
+
+.divider {
+  border-left: 1px solid #FFFFFF;
+  height: 40px;
+  align-self: center;
+  padding: 0;
+}
+
+/* Elements size classes (responsive use) */
+
+.size-15 {
+  width: 15%;
+}
+
+.size-30 {
+  width: 30%;
+}
+
+.size-33 {
+  width: 33.3%;
+}
+
+.size-40 {
+  width: 40%;
+}
+
+.size-60 {
+  width: 60%;
+}
+
+.size-70 {
+  width: 70%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: block;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Modal input forms */
+input, select {
+  width: 100%;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  border: none;
+  border-bottom: 2px solid #424242;
+  background-color: transparent;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+.modal header {
+  padding: 20px 16px;
+  background-color: black;
+  color: white;
+  margin-bottom: 1em;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+.btn-form {
+  border: 2px solid black;
+  background-color: black;
+  color: white;
+  margin: 1em 0;
+  font-size: 1em;
+}
+
+.hide {
+  display: none;
+}
+
+.video-suggested-card p {
+  margin: 0;
+  padding: 1em .5em;
+  display: none;
+}
