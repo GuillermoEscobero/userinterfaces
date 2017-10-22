@@ -1,5 +1,3 @@
-
-
 /* Part 1 */
 
 function setCookie(cookieName, cookieValue, expDays) {
@@ -163,8 +161,16 @@ function swapInfo(droppableElement, draggableElement) {
 }
 
 /* Part 4 */
-//TODO:
+
 function openVideoInfo(event) {
-  //FIXME: the route has changed
-  event.target.offsetParent.lastElementChild.style.display = "block"
+  //FIXME: the other cards also expand the paragraph section
+  //FIXME: with the description opened you cannot drop the card into the iframe
+  if (event.target.getAttribute("class") === "fa fa-minus-square-o") {
+    event.target.offsetParent.children[2].style.display = "none"
+    event.target.setAttribute("class", "fa fa-plus-square-o")
+  } else {
+    event.target.offsetParent.children[2].style.display = "block"
+    //change the icon to a minus 
+    event.target.setAttribute("class", "fa fa-minus-square-o")
+  }
 }
