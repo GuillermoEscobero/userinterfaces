@@ -154,7 +154,7 @@ function swapInfo(droppableElement, draggableElement) {
   droppableElement.children[1].lastElementChild.firstElementChild.innerText = draggableElement.children[2].innerText//Description section
   droppableElement.children[1].lastElementChild.previousElementSibling.childNodes[2].textContent = draggableElement.children[4].innerText //Shares section
   
-  draggableElement.children[1].innerText = mainTitle
+  draggableElement.children[1].firstChild.innerText = mainTitle
   draggableElement.children[2].innerText = mainText
   draggableElement.children[3].innerText = mainFav
   draggableElement.children[4].innerText = mainShares
@@ -163,7 +163,6 @@ function swapInfo(droppableElement, draggableElement) {
 /* Part 4 */
 
 function openVideoInfo(event) {
-  //FIXME: with the description opened you cannot drop the card into the iframe
   if (event.target.getAttribute("class") === "fa fa-minus-square-o") {
     event.target.offsetParent.children[2].style.display = "none"
     event.target.setAttribute("class", "fa fa-plus-square-o")
