@@ -161,8 +161,22 @@ function startGame() {
     },
 
     handleCardClick: function () {
-      this
+      var $selectedCard = $(this);
+      if (!$selectedCard.hasClass("selected")){
+        $selectedCard.addClass("selected")
+        var $selected = this.$memoryCards.$(".selected")
+        for (var index = 0; index < $selected.length; index++) {
+          var element = $selected[index];
+          if(element.attr("data-id") == $selectedCard.attr("data-id")) {
+            element.removeClass('selected');
+            element.addClass('matched');
+            $selectedCard.removeClass('selected');
+            $selectedCard.addClass('matched');
+          }
+        }
+      }
     }
+  
 
 
   };
