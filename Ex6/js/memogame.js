@@ -2,6 +2,9 @@ function startGame() {
     var memogame = {
 
         init: function () {
+            this.imagesNumber = $('#images-number').val();
+            this.timeLimit = $('#time-limit').val();
+            if(!this.checkInput()){ alert("Puto subnormal"); return;}
             this.$board = $("#board");
             this.$modal = $("#modal");
             var cardsSubset = cards.slice(0, $('#images-number').val());
@@ -12,8 +15,28 @@ function startGame() {
             this.binding();
         },
 
+        checkInput: function() {
+            return this.checkImagesNumber() && this.checkTimeLimit();
+        },
+
+        checkImagesNumber: function() {
+            if(this.imagesNumber >= 3 && this.imagesNumber <= 10) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+
+        checkTimeLimit: function() {
+            if(this.timeLimit >= 10 && this.timeLimit <= 120) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+
         shuffleCards: function (cardsArray) {
-            this.$cards = $(this.shuffle(this.cardsArray));
+            this.$cards = $(this.shuffle(cardsArray));
         },
 
         shuffle: function (array) {
@@ -37,16 +60,15 @@ function startGame() {
 
         binding: function () {
             this.$memoryCards.on("click", this.handleCardClick);
-            this.$memoryCards.flip(false);
         },
 
         handleCardClick: function () {
             var $selectedCard = $(this);
+            var $selectedCards = $(".selected.card");
             if ($selectedCard.hasClass("selected") === false) {
-                if ($(".selected.card").length < 2) {
+                if ($selectedCards.length < 2) {
                     $selectedCard.addClass("selected");
-                    $selectedCard.flip(true);
-                    var $selected = $(".selected.card");
+                    var $selected = $selectedCards;
                     for (var index = 0; index < $selected.length; index++) {
                         var element = $selected[index];
                         if (element.getAttribute("data-id") === $selectedCard.attr("data-id") && element !== $selectedCard[0]) {
@@ -57,12 +79,13 @@ function startGame() {
                         }
                     }
                 } else {
-                    $(".selected.card").removeClass('selected');
-                    $(".selected.card").flip(false);
+                    $selectedCards.removeClass('selected');
                     $selectedCard.addClass("selected");
-                    $selectedCard.flip(true);
                 }
 
+            }
+            if ($(".matched").length === memogame.$memoryCards.length) {
+                alert("Ganaste wey");
             }
         }
 
@@ -124,3 +147,6 @@ function startGame() {
 
     memogame.init();
 }
+
+
+//TODO: timer, when win (restart button, time used), pairs found during game
