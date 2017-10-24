@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style/style.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title>Memory Game - Lococo</title>
-  </head>
-  <body>
-    <div>
-      <form>
+</head>
+<body>
+<div>
+    <form>
         Number of images
         <br>
-        <input id="images-number" type="number" name="size" min="3" max="10" />
+        <input id="images-number" type="number" name="size" min="3" max="10"/>
         Time limit (seconds)
         <br>
         <input id="time-limit" type="number" name="timeLimit" min="10" max="120">
         <button type="button" class="start" onclick="startGame()" name="button">START</button>
-      </form>
-    </div>
-    <main>
-      <div id="board"></div>
-    </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/memogame.js"></script>
-  </body>
+    </form>
+    <p id="final-countdown-ninonino"></p>
+</div>
+<main>
+    <div id="board"></div>
+</main>
+<div>
+    <h3 id="pairs-completed"></h3>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/memogame.js"></script>
+</body>
 </html>
