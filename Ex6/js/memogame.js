@@ -2,37 +2,30 @@ function startGame() {
     var memogame = {
 
         init: function () {
+
             this.imagesNumber = $('#images-number').val();
             this.timeLimit = $('#time-limit').val();
-            if(!this.checkInput()){ alert("Puto subnormal"); return;}
+            if(!this.checkInput()){ alert("Error in the input fields"); return;}
             this.$board = $("#board");
-            this.$modal = $("#modal");
             var cardsSubset = cards.slice(0, $('#images-number').val());
             this.cardsArray = $.merge(cardsSubset, cardsSubset);
             this.shuffleCards(this.cardsArray);
             this.renderBoard();
             this.$memoryCards = $(".card");
             this.binding();
+            this.startTimer();
         },
 
-        checkInput: function() {
+        checkInput: function () {
             return this.checkImagesNumber() && this.checkTimeLimit();
         },
 
-        checkImagesNumber: function() {
-            if(this.imagesNumber >= 3 && this.imagesNumber <= 10) {
-                return true;
-            } else {
-                return false;
-            }
+        checkImagesNumber: function () {
+            return this.imagesNumber >= 3 && this.imagesNumber <= 10;
         },
 
-        checkTimeLimit: function() {
-            if(this.timeLimit >= 10 && this.timeLimit <= 120) {
-                return true;
-            } else {
-                return false;
-            }
+        checkTimeLimit: function () {
+            return this.timeLimit >= 10 && this.timeLimit <= 120;
         },
 
         shuffleCards: function (cardsArray) {
@@ -60,6 +53,8 @@ function startGame() {
 
         binding: function () {
             this.$memoryCards.on("click", this.handleCardClick);
+            $("button.start").html("RESET");
+            $("#pairs-completed").html('Pairs completed: ' + 0);
         },
 
         handleCardClick: function () {
@@ -76,6 +71,7 @@ function startGame() {
                             element.classList.add('matched');
                             $selectedCard.removeClass('selected');
                             $selectedCard.addClass('matched');
+                            $("#pairs-completed").html('Pairs completed: ' + $(".matched").length / 2);
                         }
                     }
                 } else {
@@ -84,9 +80,34 @@ function startGame() {
                 }
 
             }
-            if ($(".matched").length === memogame.$memoryCards.length) {
+            if ($('.matched').length === memogame.$memoryCards.length) {
                 alert("Ganaste wey");
             }
+        },
+        startTimer: function () {
+            // Update the countdown every 1 second
+            var time = parseInt(memogame.timeLimit);
+            var x = setInterval(function () {
+                //INFO: Esto va aqui porque si no tarda 1 segundo mas de lo que deberia (en lo que ejecuta la funcion y tal)
+                --time;
+
+                // Time calculations for minutes and seconds
+                var minutes = Math.floor(time / (60));
+                var seconds = Math.floor(time - minutes * 60);
+
+                // Display the result
+                document.getElementById("final-countdown-ninonino").innerHTML = minutes + "m " + seconds + "s ";
+
+                // If the count down is finished, do something
+                if (time <= 0) {
+                    clearInterval(x);
+                    alert("Time expired!");
+                    //TODO: Flip all cards -the user lost-
+
+                }
+
+            }, 1000);
+
         }
 
 
@@ -148,5 +169,6 @@ function startGame() {
     memogame.init();
 }
 
+//FIXME: when the reset button is pressed, reset the timer
 
-//TODO: timer, when win (restart button, time used), pairs found during game
+//TODO: when win, stop the timer and show the time used in the dialog
