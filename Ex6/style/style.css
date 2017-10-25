@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+#board {
+  perspective: 800px;
+}
+
+.card {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.front {
+  background-color: red;
+  border: 6px solid grey;
+}
+
+.back {
+  background-color: white;
+  border: 6px solid grey;
+  transform: rotateY( 180deg );
+}
+
+.back i {
+  font-size: 100%;
+}
+
+input {
+  display: block;
+  width: 20%;
+}
+
+.matched {
+  transform: rotateY( 180deg );
+
+}
+
+.matched .back {
+  border: 6px solid green;
+}
+
+.selected {
+  transform: rotateY( 180deg );
+}
+
+.card div {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+}
