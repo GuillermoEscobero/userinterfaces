@@ -107,7 +107,7 @@ function startGame() {
         binding: function () {
             this.$memoryCards.on('click', this.handleCardClick);
             $('button.start').html('RESET');
-            $('#pairs-completed').html('Pairs completed: ' + 0);
+            $('#pairs-completed').html(0);
         },
 
         /**
@@ -138,7 +138,7 @@ function startGame() {
                             $selectedCard.removeClass('selected');
                             $selectedCard.addClass('matched');
                             // Increase the counter of pairs completed below the board
-                            $('#pairs-completed').html('Pairs completed: ' + $('.matched').length / 2);
+                            $('#pairs-completed').html($('.matched').length / 2);
                         }
                     }
                 } else {
@@ -200,10 +200,10 @@ function startGame() {
          * listener placed on the cards and shows an alert with a time expired
          */
         userLost: function () {
-            $('#countdown').html('EXPIRED');
+            $('#countdown').html('You lose!');
             this.$memoryCards.off('click');
             $('.card:not(.card.matched)').addClass('selected');
-            alert('Time expired!\n');
+            alert('Time expired! Try again!\n');
         }
 
     };

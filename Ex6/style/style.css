@@ -2,8 +2,32 @@
     box-sizing: border-box;
 }
 
+html, body {
+  font-family: Roboto, sans-serif;
+}
+
+h1, body {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background-color: #000;
+  color: white;
+  height: 70px;
+  margin: 0;
+  width: 100%;
+  padding-left: 5%;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  line-height: 70px;
+}
+
 #board {
     perspective: 800px;
+    margin: 0 auto;
 }
 
 /* This is the style for each card */
@@ -31,11 +55,6 @@
 
 .back i {
     font-size: 100%;
-}
-
-input {
-    display: block;
-    width: 20%;
 }
 
 /* This class applies when it has been a match, the card remains flipped */
@@ -66,4 +85,40 @@ input {
 .card img {
     width: 100%;
     height: 100%;
+}
+
+form {
+  margin: 0 auto;
+  text-align: center;
+}
+
+form input {
+  margin: 10px auto;
+  width: 30%;
+  display: block;
+}
+
+main {
+  max-width: 1024px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.btn-main {
+  font-size: 1em;
+  margin: 10px 0;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 5px 30px;
+  border: 0px;
+}
+
+#countdown {
+  text-align: center;
+  margin: 0 10%;
+  font-size: 2em;
+  border: 2px solid black;
+  border-radius: 10px;
+
 }

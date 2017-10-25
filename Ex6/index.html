@@ -5,27 +5,29 @@
     <link rel="stylesheet" href="style/style.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <title>Memory Game - Lococo</title>
 </head>
 <body>
+  <header>
+    <h1>Memory Game</h1>
+  </header>
 <div>
     <form>
-        Number of images
+        Number of images (3 - 10)
         <br>
         <input id="images-number" type="number" name="size" min="3" max="10"/>
-        Time limit (seconds)
+        Time limit (10 - 120 seconds)
         <br>
         <input id="time-limit" type="number" name="timeLimit" min="10" max="120">
-        <button type="button" class="start" onclick="startGame()" name="button">START</button>
+        <button type="button" class="start btn-main" onclick="startGame()" name="button">START</button>
     </form>
     <p id="countdown"></p>
+    <h3>Pairs completed: <span id="pairs-completed"></span></h3>
 </div>
 <main>
     <div id="board"></div>
 </main>
-<div>
-    <h3 id="pairs-completed"></h3>
-</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/memogame.js"></script>
 </body>
