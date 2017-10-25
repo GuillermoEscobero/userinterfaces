@@ -1,8 +1,9 @@
 function startGame() {
+    var time;
+
     var memogame = {
 
         init: function () {
-
             this.imagesNumber = $('#images-number').val();
             this.timeLimit = $('#time-limit').val();
             if(!this.checkInput()){ alert("Error in the input fields"); return;}
@@ -11,9 +12,9 @@ function startGame() {
             this.cardsArray = $.merge(cardsSubset, cardsSubset);
             this.shuffleCards(this.cardsArray);
             this.renderBoard();
-            this.$memoryCards = $(".card");
+            this.$memoryCards = $('.card');
             this.binding();
-            this.startTimer();
+            this.timer();
         },
 
         checkInput: function () {
@@ -44,7 +45,7 @@ function startGame() {
         },
 
         renderBoard: function () {
-            var boardHtml = "";
+            var boardHtml = '';
             this.$cards.each(function (i, card) {
                 boardHtml += '<div data-id="' + card.id + '" class="card"><div class="front"></div><div class="back"><img src="' + card.img + '" alt="' + card.name + '"></div></div>';
             });
@@ -52,41 +53,42 @@ function startGame() {
         },
 
         binding: function () {
-            this.$memoryCards.on("click", this.handleCardClick);
-            $("button.start").html("RESET");
-            $("#pairs-completed").html('Pairs completed: ' + 0);
+            this.$memoryCards.on('click', this.handleCardClick);
+            $('button.start').html('RESET');
+            $('#pairs-completed').html('Pairs completed: ' + 0);
         },
 
         handleCardClick: function () {
             var $selectedCard = $(this);
-            var $selectedCards = $(".selected.card");
-            if ($selectedCard.hasClass("selected") === false) {
+            var $selectedCards = $('.selected.card');
+            if ($selectedCard.hasClass('selected') === false) {
                 if ($selectedCards.length < 2) {
-                    $selectedCard.addClass("selected");
+                    $selectedCard.addClass('selected');
                     var $selected = $selectedCards;
                     for (var index = 0; index < $selected.length; index++) {
                         var element = $selected[index];
-                        if (element.getAttribute("data-id") === $selectedCard.attr("data-id") && element !== $selectedCard[0]) {
+                        if (element.getAttribute('data-id') === $selectedCard.attr('data-id') && element !== $selectedCard[0]) {
                             element.classList.remove('selected');
                             element.classList.add('matched');
                             $selectedCard.removeClass('selected');
                             $selectedCard.addClass('matched');
-                            $("#pairs-completed").html('Pairs completed: ' + $(".matched").length / 2);
+                            $('#pairs-completed').html('Pairs completed: ' + $('.matched').length / 2);
                         }
                     }
                 } else {
                     $selectedCards.removeClass('selected');
-                    $selectedCard.addClass("selected");
+                    $selectedCard.addClass('selected');
                 }
 
             }
             if ($('.matched').length === memogame.$memoryCards.length) {
-                alert("Ganaste wey");
+                memogame.userWon();
             }
         },
-        startTimer: function () {
+
+        timer: function () {
             // Update the countdown every 1 second
-            var time = parseInt(memogame.timeLimit);
+            time = parseInt(memogame.timeLimit);
             var x = setInterval(function () {
                 //INFO: Esto va aqui porque si no tarda 1 segundo mas de lo que deberia (en lo que ejecuta la funcion y tal)
                 --time;
@@ -96,72 +98,86 @@ function startGame() {
                 var seconds = Math.floor(time - minutes * 60);
 
                 // Display the result
-                document.getElementById("final-countdown-ninonino").innerHTML = minutes + "m " + seconds + "s ";
+                $('#final-countdown-ninonino').html(minutes + 'm ' + seconds + 's');
 
                 // If the count down is finished, do something
                 if (time <= 0) {
                     clearInterval(x);
-                    alert("Time expired!");
-                    //TODO: Flip all cards -the user lost-
-
+                    memogame.userLost();
                 }
 
             }, 1000);
 
-        }
+        },
 
+        userWon: function () {
+            //TODO: when win, stop the timer
+            //timer.clearInterval(timer);
+            this.$memoryCards.off('click');
+            var minutes = Math.floor((memogame.timeLimit - time) / (60));
+            var seconds = Math.floor((memogame.timeLimit - time)-minutes * 60);
+            alert('You won in:\n' + minutes + 'm ' + seconds + 's');
+
+        },
+
+        userLost: function () {
+            $('#final-countdown-ninonino').html('EXPIRED');
+            this.$memoryCards.off('click');
+            $('.card:not(.card.matched)').addClass('selected');
+            alert('Time expired!\n');
+        }
 
     };
 
     var cards = [
         {
-            name: "youtube",
-            img: "images/001-youtube.svg",
+            name: 'youtube',
+            img: 'images/001-youtube.svg',
             id: 1
         },
         {
-            name: "yelp",
-            img: "images/002-yelp.svg",
+            name: 'yelp',
+            img: 'images/002-yelp.svg',
             id: 2
         },
         {
-            name: "wordpress",
-            img: "images/003-wordpress.svg",
+            name: 'wordpress',
+            img: 'images/003-wordpress.svg',
             id: 3
         },
         {
-            name: "wikipedia",
-            img: "images/004-wikipedia.svg",
+            name: 'wikipedia',
+            img: 'images/004-wikipedia.svg',
             id: 4
         },
         {
-            name: "whatsapp",
-            img: "images/005-whatsapp.svg",
+            name: 'whatsapp',
+            img: 'images/005-whatsapp.svg',
             id: 5
         },
         {
-            name: "vine",
-            img: "images/006-vine.svg",
+            name: 'vine',
+            img: 'images/006-vine.svg',
             id: 6
         },
         {
-            name: "vimeo",
-            img: "images/007-vimeo.svg",
+            name: 'vimeo',
+            img: 'images/007-vimeo.svg',
             id: 7
         },
         {
-            name: "twitter",
-            img: "images/008-twitter.svg",
+            name: 'twitter',
+            img: 'images/008-twitter.svg',
             id: 8
         },
         {
-            name: "tumblr",
-            img: "images/009-tumblr.svg",
+            name: 'tumblr',
+            img: 'images/009-tumblr.svg',
             id: 9
         },
         {
-            name: "trello",
-            img: "images/010-trello.svg",
+            name: 'trello',
+            img: 'images/010-trello.svg',
             id: 10
         }
     ];
@@ -170,5 +186,3 @@ function startGame() {
 }
 
 //FIXME: when the reset button is pressed, reset the timer
-
-//TODO: when win, stop the timer and show the time used in the dialog
