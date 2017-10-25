@@ -1,9 +1,12 @@
+var x;
+
 function startGame() {
     var time;
 
     var memogame = {
 
         init: function () {
+            clearInterval(x);
             this.imagesNumber = $('#images-number').val();
             this.timeLimit = $('#time-limit').val();
             if(!this.checkInput()){ alert("Error in the input fields"); return;}
@@ -89,7 +92,7 @@ function startGame() {
         timer: function () {
             // Update the countdown every 1 second
             time = parseInt(memogame.timeLimit);
-            var x = setInterval(function () {
+            x = setInterval(function () {
                 //INFO: Esto va aqui porque si no tarda 1 segundo mas de lo que deberia (en lo que ejecuta la funcion y tal)
                 --time;
 
@@ -111,13 +114,11 @@ function startGame() {
         },
 
         userWon: function () {
-            //TODO: when win, stop the timer
-            //timer.clearInterval(timer);
+            clearInterval(x);
             this.$memoryCards.off('click');
             var minutes = Math.floor((memogame.timeLimit - time) / (60));
             var seconds = Math.floor((memogame.timeLimit - time)-minutes * 60);
             alert('You won in:\n' + minutes + 'm ' + seconds + 's');
-
         },
 
         userLost: function () {
