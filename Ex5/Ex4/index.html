@@ -39,10 +39,12 @@
         <h2>Login</h2>
       </header>
       <div class="modal-body">
+        <!-- Return false to not allowing the page to send the data and refresh -->
         <form onsubmit="submitLogin(); return false;">
           Email<br>
           <input id="login-email" type="email" name="email" required>
           Password<br>
+          <!-- Pattern to fulfill the requirement of the password format -->
           <input id="login-password" type="password" name="password" title="A combination of letters and numbers of 8 characters maximum" maxlength="8" pattern="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?!.*\s).*$" required>
           <button class="btn-form" type="submit" name="submit">Submit</button>
         </form>
@@ -55,6 +57,7 @@
     <div class="sections-container">
       <h1>My Account details</h1>
       <hr>
+      <!-- Return false to not allowing the page to send the data and refresh -->
       <form onsubmit="submitChanges(); return false;">
       <section id="login-data-section">
         <!--Header with the title of the section-->
@@ -70,6 +73,7 @@
             </li>
             <li>Password
               <br>
+              <!-- Pattern to fulfill the requirement of the password format -->
               <input type="password" name="password" title="A combination of letters and numbers of 8 characters maximum" maxlength="8" pattern="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?!.*\s).*$" required>
             </li>
           </ul>
@@ -96,6 +100,7 @@
             </li>
             <li>Birthdate
               <br>
+              <!-- Pattern to avoid not existing dates -->
               <input type="text" name="birthday" maxlength="10" placeholder="mm/dd/yyyy" pattern="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d" required>
             </li>
           </ul>
@@ -145,6 +150,7 @@
             <!--Using FontAwesome icons once again -->
             <li>Payment method&nbsp;<i id="payment-icon" class="fa fa-credit-card-alt" aria-hidden="true"></i>
               <br>
+              <!-- When this option is changed, changePaymentMethod function is called to update the form fields -->
               <select id="payment-method" name="payment-method" onchange="changePaymentMethod()" required>
                   <option value="">Choose</option>
                   <option value="credit-card" selected>Credit card</option>
@@ -184,6 +190,7 @@
       <div id="ok-buttons">
           <input type="checkbox" name="conditions" value="ok-conditions" required>I have read and agree to terms of use, privacy policy and use of cookies.<br>
           <button class="btn-form" type="submit" name="submit">Save</button>
+          <!-- loadCookiesData for reset the form and discard all the modified values -->
           <button class="btn-form" type="button" onclick="loadCookiesData()" name="cancel">Cancel</button>
       </div>
       </form>
