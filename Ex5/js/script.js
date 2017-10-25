@@ -38,12 +38,13 @@ function getCookie(cookieName) {
  */
 function submitLogin() {
     var userEmail = document.getElementById('login-email').value;
-
+    // If this email is known, loads the data of the cookies and hide the modal
     if (getCookie("email") === userEmail) {
         loadCookiesData();
         document.getElementById('login-modal').style.display = "none";
     } else {
-        window.location = "Ex4/index.html";
+        // If not, user is redirected to exercise 1
+        window.location = "Ex1/index.html";
     }
 }
 
