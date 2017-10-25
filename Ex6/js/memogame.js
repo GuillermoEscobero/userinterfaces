@@ -22,9 +22,10 @@ function startGame() {
             if(!this.checkInput()){ alert("Error in the input fields"); return;}
             // Query the board element
             this.$board = $("#board");
-            // TODO:
+            // This selects the number of items from the array where we store our cards that has been
+            // introduced by the user
             var cardsSubset = cards.slice(0, this.imagesNumber);
-            // TODO:
+            // This merges twice the above created array in order to have two of each in the array -both pairs-
             this.cardsArray = $.merge(cardsSubset, cardsSubset);
             // Call shuffleCards function with the array containing the cards
             this.shuffleCards(this.cardsArray);
