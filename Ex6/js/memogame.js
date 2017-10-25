@@ -1,12 +1,19 @@
-var x;
+// Declare the variable timerId that will later be used as an Id for the timer
+var timerId;
 
 function startGame() {
+    // Variable that will store the time spent by the user to complete the game
     var time;
 
+    // We set the structure and functions that a memogame of this type will need
     var memogame = {
 
+        /**
+         * This function is called every time a new game is started, it creates the board, sets a timer, handles the
+         * inputs, creates the cards and shuffles them randomly.
+         */
         init: function () {
-            clearInterval(x);
+            clearInterval(timerId);
             this.imagesNumber = $('#images-number').val();
             this.timeLimit = $('#time-limit').val();
             if(!this.checkInput()){ alert("Error in the input fields"); return;}
@@ -20,22 +27,43 @@ function startGame() {
             this.timer();
         },
 
+        /**
+         *
+         * @returns {*}
+         */
         checkInput: function () {
             return this.checkImagesNumber() && this.checkTimeLimit();
         },
 
+        /**
+         *
+         * @returns {boolean}
+         */
         checkImagesNumber: function () {
             return this.imagesNumber >= 3 && this.imagesNumber <= 10;
         },
 
+        /**
+         *
+         * @returns {boolean}
+         */
         checkTimeLimit: function () {
             return this.timeLimit >= 10 && this.timeLimit <= 120;
         },
 
+        /**
+         *
+         * @param cardsArray
+         */
         shuffleCards: function (cardsArray) {
             this.$cards = $(this.shuffle(cardsArray));
         },
 
+        /**
+         *
+         * @param array
+         * @returns {*}
+         */
         shuffle: function (array) {
             var i = array.length, j, temp;
             while (--i > 0) {
@@ -47,6 +75,9 @@ function startGame() {
             return array;
         },
 
+        /**
+         *
+         */
         renderBoard: function () {
             var boardHtml = '';
             this.$cards.each(function (i, card) {
@@ -55,12 +86,18 @@ function startGame() {
             this.$board.html(boardHtml);
         },
 
+        /**
+         *
+         */
         binding: function () {
             this.$memoryCards.on('click', this.handleCardClick);
             $('button.start').html('RESET');
             $('#pairs-completed').html('Pairs completed: ' + 0);
         },
 
+        /**
+         *
+         */
         handleCardClick: function () {
             var $selectedCard = $(this);
             var $selectedCards = $('.selected.card');
@@ -89,10 +126,13 @@ function startGame() {
             }
         },
 
+        /**
+         *
+         */
         timer: function () {
             // Update the countdown every 1 second
             time = parseInt(memogame.timeLimit);
-            x = setInterval(function () {
+            timerId = setInterval(function () {
                 //INFO: Esto va aqui porque si no tarda 1 segundo mas de lo que deberia (en lo que ejecuta la funcion y tal)
                 --time;
 
@@ -105,7 +145,7 @@ function startGame() {
 
                 // If the count down is finished, do something
                 if (time <= 0) {
-                    clearInterval(x);
+                    clearInterval(timerId);
                     memogame.userLost();
                 }
 
@@ -113,14 +153,20 @@ function startGame() {
 
         },
 
+        /**
+         *
+         */
         userWon: function () {
-            clearInterval(x);
+            clearInterval(timerId);
             this.$memoryCards.off('click');
             var minutes = Math.floor((memogame.timeLimit - time) / (60));
             var seconds = Math.floor((memogame.timeLimit - time)-minutes * 60);
             alert('You won in:\n' + minutes + 'm ' + seconds + 's');
         },
 
+        /**
+         *
+         */
         userLost: function () {
             $('#final-countdown-ninonino').html('EXPIRED');
             this.$memoryCards.off('click');
@@ -130,6 +176,9 @@ function startGame() {
 
     };
 
+    /*
+     *
+     */
     var cards = [
         {
             name: 'youtube',
