@@ -64,7 +64,6 @@ function startGame() {
         handleCardClick: function () {
             var $selectedCard = $(this);
             var $selectedCards = $('.selected.card');
-            var $matchedCards = $('.matched').length;
             if ($selectedCard.hasClass('selected') === false) {
                 if ($selectedCards.length < 2) {
                     $selectedCard.addClass('selected');
@@ -76,7 +75,7 @@ function startGame() {
                             element.classList.add('matched');
                             $selectedCard.removeClass('selected');
                             $selectedCard.addClass('matched');
-                            $('#pairs-completed').html('Pairs completed: ' +  $matchedCards / 2);
+                            $('#pairs-completed').html('Pairs completed: ' + $('.matched').length / 2);
                         }
                     }
                 } else {
@@ -85,7 +84,7 @@ function startGame() {
                 }
 
             }
-            if ($matchedCards.length === memogame.$memoryCards.length) {
+            if ($('.matched').length === memogame.$memoryCards.length) {
                 memogame.userWon();
             }
         },
