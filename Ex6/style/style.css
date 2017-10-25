@@ -1,62 +1,69 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 #board {
-  perspective: 800px;
+    perspective: 800px;
 }
 
+/* This is the style for each card */
 .card {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  margin: 10px;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
 }
 
+/* This is the front of the card, this is the default state unless flipped */
 .front {
-  background-color: red;
-  border: 6px solid grey;
+    background-color: red;
+    border: 6px solid grey;
 }
 
+/* This is the back of the card, showing the image and adding a transformation transition when it flips */
 .back {
-  background-color: white;
-  border: 6px solid grey;
-  transform: rotateY( 180deg );
+    background-color: white;
+    border: 6px solid grey;
+    transform: rotateY(180deg);
 }
 
 .back i {
-  font-size: 100%;
+    font-size: 100%;
 }
 
 input {
-  display: block;
-  width: 20%;
+    display: block;
+    width: 20%;
 }
 
+/* This class applies when it has been a match, the card remains flipped */
 .matched {
-  transform: rotateY( 180deg );
+    transform: rotateY(180deg);
 
 }
 
+/* On a match the card's border changes its color to green to show the user found a pair  */
 .matched .back {
-  border: 6px solid green;
+    border: 6px solid green;
 }
 
+/* This style applies when the user clicks on the card, showing the front of it -a flip animation has been added */
 .selected {
-  transform: rotateY( 180deg );
+    transform: rotateY(180deg);
 }
 
 .card div {
-  margin: 0;
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
+    margin: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
 }
 
 .card img {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
