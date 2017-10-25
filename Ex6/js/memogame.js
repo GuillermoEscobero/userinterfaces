@@ -11,7 +11,7 @@ function startGame() {
             this.timeLimit = $('#time-limit').val();
             if(!this.checkInput()){ alert("Error in the input fields"); return;}
             this.$board = $("#board");
-            var cardsSubset = cards.slice(0, $('#images-number').val());
+            var cardsSubset = cards.slice(0, this.imagesNumber);
             this.cardsArray = $.merge(cardsSubset, cardsSubset);
             this.shuffleCards(this.cardsArray);
             this.renderBoard();
@@ -64,6 +64,7 @@ function startGame() {
         handleCardClick: function () {
             var $selectedCard = $(this);
             var $selectedCards = $('.selected.card');
+            var $matchedCards = $('.matched').length;
             if ($selectedCard.hasClass('selected') === false) {
                 if ($selectedCards.length < 2) {
                     $selectedCard.addClass('selected');
@@ -75,7 +76,7 @@ function startGame() {
                             element.classList.add('matched');
                             $selectedCard.removeClass('selected');
                             $selectedCard.addClass('matched');
-                            $('#pairs-completed').html('Pairs completed: ' + $('.matched').length / 2);
+                            $('#pairs-completed').html('Pairs completed: ' +  $matchedCards / 2);
                         }
                     }
                 } else {
@@ -84,7 +85,7 @@ function startGame() {
                 }
 
             }
-            if ($('.matched').length === memogame.$memoryCards.length) {
+            if ($matchedCards.length === memogame.$memoryCards.length) {
                 memogame.userWon();
             }
         },
@@ -185,5 +186,3 @@ function startGame() {
 
     memogame.init();
 }
-
-//FIXME: when the reset button is pressed, reset the timer
