@@ -11,6 +11,10 @@ h1, body {
   margin: 0;
 }
 
+h3 {
+  text-align: center;
+}
+
 header {
   background-color: #000;
   color: white;
